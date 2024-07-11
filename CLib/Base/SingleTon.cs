@@ -16,7 +16,7 @@ public class Singleton<T> where T : class, new()
 
     protected Singleton() { }
 
-    private static T? Load()
+    internal static T? Load()
     {
         var path = GetPath();
         try
@@ -37,7 +37,7 @@ public class Singleton<T> where T : class, new()
         }
     }
 
-    protected virtual void Save()
+    internal virtual void Save()
     {
         var path = GetPath();
         try
@@ -54,7 +54,7 @@ public class Singleton<T> where T : class, new()
         }
     }
 
-    private static string GetPath()
+    internal static string GetPath()
     {
         var name = typeof(T).Name;
         var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "COMIZOA", "Clib", $"{name}.xml");

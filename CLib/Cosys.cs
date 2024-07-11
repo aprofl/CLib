@@ -88,7 +88,6 @@ namespace CLib
             {
                 case "A5025032":
                     return new EtherCATDevice();
-                // 기타 다른 디바이스 타입들
                 default:
                     return null;
             }

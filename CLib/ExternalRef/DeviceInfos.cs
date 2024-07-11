@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 [XmlRoot("DeviceList")]
 public class DeviceInfos : Singleton<DeviceInfos>
 {    
-    void Init()
+    internal void Init()
     {
         if (Devices != null && Devices.Count > 0)
             return;

@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLib_Examples", "CLib_Examp
 		{1ED36A10-4CF9-4B9A-976E-BF6C0E499940} = {1ED36A10-4CF9-4B9A-976E-BF6C0E499940}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLib_xUnit", "CLib_xUnit\CLib_xUnit.csproj", "{153B5FF0-5507-48BA-BFC9-2DD6CAB2A649}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{8F939349-082C-46AA-B536-F08687AD0481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F939349-082C-46AA-B536-F08687AD0481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F939349-082C-46AA-B536-F08687AD0481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{153B5FF0-5507-48BA-BFC9-2DD6CAB2A649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153B5FF0-5507-48BA-BFC9-2DD6CAB2A649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153B5FF0-5507-48BA-BFC9-2DD6CAB2A649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153B5FF0-5507-48BA-BFC9-2DD6CAB2A649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
