@@ -50,3 +50,9 @@ public enum DevType
     EtherCAT_Driver = 41,
     ALL = 100,
 }
+
+public enum LogType
+{
+    SQLite,
+    File
+}

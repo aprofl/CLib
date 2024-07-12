@@ -12,6 +12,8 @@ namespace CLib
         private static List<IDevice> devices = new List<IDevice>();
         public static void Init()
         {
+            //LogManager.Instance.ConfigureLogger();
+
             var list = DeviceManager.Instance.ScanForDevices();
             var devInfos = DeviceInfos.Instance.Devices;
             var pInfos = PlatformInfos.Instance.List;
