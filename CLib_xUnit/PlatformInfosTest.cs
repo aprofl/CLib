@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Xunit;
-using Xunit.Abstractions;
+﻿using Xunit.Abstractions;
+using CLib;
+
 
 public class PlatformInfosTests : ComplexityTestBase
 {
@@ -12,7 +10,7 @@ public class PlatformInfosTests : ComplexityTestBase
 
     public PlatformInfosTests(ITestOutputHelper output) : base(output)
     {
-        _filePath = Singleton<PlatformInfos>.GetPath();
+        _filePath = CLib.Singleton<PlatformInfos>.GetPath();
     }
 
     [Fact]

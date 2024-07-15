@@ -1,30 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: CLib.DeviceChecker
-  commentId: T:CLib.DeviceChecker
-  id: DeviceChecker
+- uid: CLib.SQLiteLogFactory
+  commentId: T:CLib.SQLiteLogFactory
+  id: SQLiteLogFactory
   parent: CLib
   children:
-  - CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
+  - CLib.SQLiteLogFactory.#ctor(CLib.SQLiteSettings)
+  - CLib.SQLiteLogFactory.CreateLoggerConfiguration
   langs:
   - csharp
   - vb
-  name: DeviceChecker
-  nameWithType: DeviceChecker
-  fullName: CLib.DeviceChecker
+  name: SQLiteLogFactory
+  nameWithType: SQLiteLogFactory
+  fullName: CLib.SQLiteLogFactory
   type: Class
   source:
-    id: DeviceChecker
-    path: D:\10_Project\CLib\CLib\Cosys.cs
-    startLine: 23
+    id: SQLiteLogFactory
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 83
   assemblies:
   - CLib
   namespace: CLib
   syntax:
-    content: public static class DeviceChecker
-    content.vb: Public Module DeviceChecker
+    content: 'public class SQLiteLogFactory : ILogFactory'
+    content.vb: Public Class SQLiteLogFactory Implements ILogFactory
   inheritance:
   - System.Object
+  implements:
+  - CLib.ILogFactory
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -33,38 +36,61 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  commentId: M:CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  id: GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  parent: CLib.DeviceChecker
+- uid: CLib.SQLiteLogFactory.#ctor(CLib.SQLiteSettings)
+  commentId: M:CLib.SQLiteLogFactory.#ctor(CLib.SQLiteSettings)
+  id: '#ctor(CLib.SQLiteSettings)'
+  parent: CLib.SQLiteLogFactory
   langs:
   - csharp
   - vb
-  name: GetInstalledDevices(List<string>, List<DeviceInfo>)
-  nameWithType: DeviceChecker.GetInstalledDevices(List<string>, List<DeviceInfo>)
-  fullName: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List<string>, System.Collections.Generic.List<CLib.DeviceInfo>)
-  type: Method
+  name: SQLiteLogFactory(SQLiteSettings)
+  nameWithType: SQLiteLogFactory.SQLiteLogFactory(SQLiteSettings)
+  fullName: CLib.SQLiteLogFactory.SQLiteLogFactory(CLib.SQLiteSettings)
+  type: Constructor
   source:
-    id: GetInstalledDevices
-    path: D:\10_Project\CLib\CLib\Cosys.cs
-    startLine: 25
+    id: .ctor
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 87
   assemblies:
   - CLib
   namespace: CLib
   syntax:
-    content: public static List<DeviceInfo> GetInstalledDevices(List<string> detectedDeviceIds, List<DeviceInfo> devices)
+    content: public SQLiteLogFactory(SQLiteSettings sqliteSettings)
     parameters:
-    - id: detectedDeviceIds
-      type: System.Collections.Generic.List{System.String}
-    - id: devices
-      type: System.Collections.Generic.List{CLib.DeviceInfo}
+    - id: sqliteSettings
+      type: CLib.SQLiteSettings
+    content.vb: Public Sub New(sqliteSettings As SQLiteSettings)
+  overload: CLib.SQLiteLogFactory.#ctor*
+  nameWithType.vb: SQLiteLogFactory.New(SQLiteSettings)
+  fullName.vb: CLib.SQLiteLogFactory.New(CLib.SQLiteSettings)
+  name.vb: New(SQLiteSettings)
+- uid: CLib.SQLiteLogFactory.CreateLoggerConfiguration
+  commentId: M:CLib.SQLiteLogFactory.CreateLoggerConfiguration
+  id: CreateLoggerConfiguration
+  parent: CLib.SQLiteLogFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateLoggerConfiguration()
+  nameWithType: SQLiteLogFactory.CreateLoggerConfiguration()
+  fullName: CLib.SQLiteLogFactory.CreateLoggerConfiguration()
+  type: Method
+  source:
+    id: CreateLoggerConfiguration
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 92
+  assemblies:
+  - CLib
+  namespace: CLib
+  example: []
+  syntax:
+    content: public LoggerConfiguration CreateLoggerConfiguration()
     return:
-      type: System.Collections.Generic.List{CLib.DeviceInfo}
-    content.vb: Public Shared Function GetInstalledDevices(detectedDeviceIds As List(Of String), devices As List(Of DeviceInfo)) As List(Of DeviceInfo)
-  overload: CLib.DeviceChecker.GetInstalledDevices*
-  nameWithType.vb: DeviceChecker.GetInstalledDevices(List(Of String), List(Of DeviceInfo))
-  fullName.vb: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List(Of String), System.Collections.Generic.List(Of CLib.DeviceInfo))
-  name.vb: GetInstalledDevices(List(Of String), List(Of DeviceInfo))
+      type: Serilog.LoggerConfiguration
+    content.vb: Public Function CreateLoggerConfiguration() As LoggerConfiguration
+  overload: CLib.SQLiteLogFactory.CreateLoggerConfiguration*
+  implements:
+  - CLib.ILogFactory.CreateLoggerConfiguration
 references:
 - uid: CLib
   commentId: N:CLib
@@ -83,6 +109,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: CLib.ILogFactory
+  commentId: T:CLib.ILogFactory
+  parent: CLib
+  href: CLib.ILogFactory.html
+  name: ILogFactory
+  nameWithType: ILogFactory
+  fullName: CLib.ILogFactory
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -309,142 +342,57 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: CLib.DeviceChecker.GetInstalledDevices*
-  commentId: Overload:CLib.DeviceChecker.GetInstalledDevices
-  href: CLib.DeviceChecker.html#CLib_DeviceChecker_GetInstalledDevices_System_Collections_Generic_List_System_String__System_Collections_Generic_List_CLib_DeviceInfo__
-  name: GetInstalledDevices
-  nameWithType: DeviceChecker.GetInstalledDevices
-  fullName: CLib.DeviceChecker.GetInstalledDevices
-- uid: System.Collections.Generic.List{System.String}
-  commentId: T:System.Collections.Generic.List{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<string>
-  nameWithType: List<string>
-  fullName: System.Collections.Generic.List<string>
-  nameWithType.vb: List(Of String)
-  fullName.vb: System.Collections.Generic.List(Of String)
-  name.vb: List(Of String)
+- uid: CLib.SQLiteLogFactory.#ctor*
+  commentId: Overload:CLib.SQLiteLogFactory.#ctor
+  href: CLib.SQLiteLogFactory.html#CLib_SQLiteLogFactory__ctor_CLib_SQLiteSettings_
+  name: SQLiteLogFactory
+  nameWithType: SQLiteLogFactory.SQLiteLogFactory
+  fullName: CLib.SQLiteLogFactory.SQLiteLogFactory
+  nameWithType.vb: SQLiteLogFactory.New
+  fullName.vb: CLib.SQLiteLogFactory.New
+  name.vb: New
+- uid: CLib.SQLiteSettings
+  commentId: T:CLib.SQLiteSettings
+  parent: CLib
+  href: CLib.SQLiteSettings.html
+  name: SQLiteSettings
+  nameWithType: SQLiteSettings
+  fullName: CLib.SQLiteSettings
+- uid: CLib.SQLiteLogFactory.CreateLoggerConfiguration*
+  commentId: Overload:CLib.SQLiteLogFactory.CreateLoggerConfiguration
+  href: CLib.SQLiteLogFactory.html#CLib_SQLiteLogFactory_CreateLoggerConfiguration
+  name: CreateLoggerConfiguration
+  nameWithType: SQLiteLogFactory.CreateLoggerConfiguration
+  fullName: CLib.SQLiteLogFactory.CreateLoggerConfiguration
+- uid: CLib.ILogFactory.CreateLoggerConfiguration
+  commentId: M:CLib.ILogFactory.CreateLoggerConfiguration
+  parent: CLib.ILogFactory
+  href: CLib.ILogFactory.html#CLib_ILogFactory_CreateLoggerConfiguration
+  name: CreateLoggerConfiguration()
+  nameWithType: ILogFactory.CreateLoggerConfiguration()
+  fullName: CLib.ILogFactory.CreateLoggerConfiguration()
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - uid: CLib.ILogFactory.CreateLoggerConfiguration
+    name: CreateLoggerConfiguration
+    href: CLib.ILogFactory.html#CLib_ILogFactory_CreateLoggerConfiguration
   - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: System.Collections.Generic.List{CLib.DeviceInfo}
-  commentId: T:System.Collections.Generic.List{CLib.DeviceInfo}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<DeviceInfo>
-  nameWithType: List<DeviceInfo>
-  fullName: System.Collections.Generic.List<CLib.DeviceInfo>
-  nameWithType.vb: List(Of DeviceInfo)
-  fullName.vb: System.Collections.Generic.List(Of CLib.DeviceInfo)
-  name.vb: List(Of DeviceInfo)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: CLib.DeviceInfo
-    name: DeviceInfo
-    href: CLib.DeviceInfo.html
-  - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - uid: CLib.ILogFactory.CreateLoggerConfiguration
+    name: CreateLoggerConfiguration
+    href: CLib.ILogFactory.html#CLib_ILogFactory_CreateLoggerConfiguration
   - name: (
-  - name: Of
-  - name: " "
-  - uid: CLib.DeviceInfo
-    name: DeviceInfo
-    href: CLib.DeviceInfo.html
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: Serilog.LoggerConfiguration
+  commentId: T:Serilog.LoggerConfiguration
+  parent: Serilog
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+  name: LoggerConfiguration
+  nameWithType: LoggerConfiguration
+  fullName: Serilog.LoggerConfiguration
+- uid: Serilog
+  commentId: N:Serilog
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  name: Serilog
+  nameWithType: Serilog
+  fullName: Serilog

@@ -1,0 +1,75 @@
+### YamlMime:ManagedReference
+items:
+- uid: CLib.ILogFactory
+  commentId: T:CLib.ILogFactory
+  id: ILogFactory
+  parent: CLib
+  children:
+  - CLib.ILogFactory.CreateLoggerConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ILogFactory
+  nameWithType: ILogFactory
+  fullName: CLib.ILogFactory
+  type: Interface
+  source:
+    id: ILogFactory
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 49
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public interface ILogFactory
+    content.vb: Public Interface ILogFactory
+- uid: CLib.ILogFactory.CreateLoggerConfiguration
+  commentId: M:CLib.ILogFactory.CreateLoggerConfiguration
+  id: CreateLoggerConfiguration
+  parent: CLib.ILogFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateLoggerConfiguration()
+  nameWithType: ILogFactory.CreateLoggerConfiguration()
+  fullName: CLib.ILogFactory.CreateLoggerConfiguration()
+  type: Method
+  source:
+    id: CreateLoggerConfiguration
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 51
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: LoggerConfiguration CreateLoggerConfiguration()
+    return:
+      type: Serilog.LoggerConfiguration
+    content.vb: Function CreateLoggerConfiguration() As LoggerConfiguration
+  overload: CLib.ILogFactory.CreateLoggerConfiguration*
+references:
+- uid: CLib
+  commentId: N:CLib
+  href: CLib.html
+  name: CLib
+  nameWithType: CLib
+  fullName: CLib
+- uid: CLib.ILogFactory.CreateLoggerConfiguration*
+  commentId: Overload:CLib.ILogFactory.CreateLoggerConfiguration
+  href: CLib.ILogFactory.html#CLib_ILogFactory_CreateLoggerConfiguration
+  name: CreateLoggerConfiguration
+  nameWithType: ILogFactory.CreateLoggerConfiguration
+  fullName: CLib.ILogFactory.CreateLoggerConfiguration
+- uid: Serilog.LoggerConfiguration
+  commentId: T:Serilog.LoggerConfiguration
+  parent: Serilog
+  isExternal: true
+  name: LoggerConfiguration
+  nameWithType: LoggerConfiguration
+  fullName: Serilog.LoggerConfiguration
+- uid: Serilog
+  commentId: N:Serilog
+  isExternal: true
+  name: Serilog
+  nameWithType: Serilog
+  fullName: Serilog

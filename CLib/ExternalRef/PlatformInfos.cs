@@ -1,18 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-[XmlRoot("PlatformInfos")]
-public class PlatformInfos : Singleton<PlatformInfos> 
-{   
-    public PlatformInfos() 
-    {        
-    }
-
-    internal void Init()
+namespace CLib
+{
+    [XmlRoot("PlatformInfos")]
+    public class PlatformInfos : Singleton<PlatformInfos>
     {
-        if (List == null || List.Count == 0)
+        public PlatformInfos()
         {
-            List = new List<Platform>()
+        }
+
+        internal void Init()
+        {
+            if (List == null || List.Count == 0)
+            {
+                List = new List<Platform>()
             {
                 new Platform() { Name = "cEIP", DLL = "ceSDKDLL.dll" },
                 new Platform() { Name = "PCI_Pulse", Driver = "ComiLX", DLL = "cmmsdk.dll" },
@@ -27,57 +29,58 @@ public class PlatformInfos : Singleton<PlatformInfos>
                 new Platform() { Name = "DAQ_DX", Driver ="ComiDX", DLL = "ComiDXDll.dll" },
                 new Platform() { Name = "CNet", Driver ="ComiNet", DLL = "CNETSDK.dll" },
             };
-            Save();
+                Save();
+            }
+
+            dicPlatform.Clear();
+            List?.ForEach(x => dicPlatform.Add(x.Type, x));
         }
 
-        dicPlatform.Clear();
-        List?.ForEach(x => dicPlatform.Add(x.Type, x));
+        [XmlElement]
+        public Info? Info { get; set; } = new Info();
+
+        [XmlElement("Platform")]
+        public List<Platform>? List { get; set; }
+        [XmlIgnore]
+        public Dictionary<DevType, Platform> dicPlatform = new Dictionary<DevType, Platform>();
     }
 
-    [XmlElement]
-    public Info? Info { get; set; } = new Info();
-
-    [XmlElement("Platform")]
-    public List<Platform>? List { get; set; }
-    [XmlIgnore]
-    public Dictionary<DevType, Platform> dicPlatform = new Dictionary<DevType, Platform>();
-}
-
-public class Platform
-{    
-    [XmlIgnore]
-    private string? name;
-
-    [XmlAttribute]
-    public string? Name
+    public class Platform
     {
-        get { return name; }
-        set
+        [XmlIgnore]
+        private string? name;
+
+        [XmlAttribute]
+        public string? Name
         {
-            name = value;
-            Enum.TryParse(name, out Type);
+            get { return name; }
+            set
+            {
+                name = value;
+                Enum.TryParse(name, out Type);
+            }
         }
+
+        [XmlIgnore]
+        public DevType Type;
+
+        [XmlAttribute]
+        public string? DLL { get; set; }
+
+        [XmlElement("Driver")]
+        public List<string> Drivers { get; set; } = new List<string>();
+
+        [XmlIgnore]
+        public string Driver
+        {
+            get => string.Join(",", Drivers);
+            set => Drivers = value.Split(",").ToList();
+        }
+
+        [XmlIgnore]
+        public bool IsInstalled { get; set; }
+
+        [XmlIgnore]
+        public bool IsDriverInstalled { get; set; }
     }
-
-    [XmlIgnore]
-    public DevType Type;
-
-    [XmlAttribute]
-    public string? DLL { get; set; }
-
-    [XmlElement("Driver")]
-    public List<string> Drivers { get; set; } = new List<string>();
-
-    [XmlIgnore]
-    public string Driver
-    {
-        get => string.Join(",", Drivers);
-        set => Drivers = value.Split(",").ToList();
-    }
-
-    [XmlIgnore]
-    public bool IsInstalled { get; set; }
-
-    [XmlIgnore]
-    public bool IsDriverInstalled { get; set; }
 }

@@ -1,78 +1,81 @@
 ﻿using System.Reflection;
 using System.Xml.Serialization;
 
-/// <summary>
-/// Singleton Base Class
-/// </summary>
-/// <remarks>
-/// <para>%AppData%\COMIZOA\CLib\l 파일의 정보 참조</para>
-/// </remarks>
-[Serializable]
-public class Singleton<T> where T : class, new()
+namespace CLib
 {
-    private static readonly Lazy<T> instance = new Lazy<T>(() =>
+    /// <summary>
+    /// Singleton Base Class
+    /// </summary>
+    /// <remarks>
+    /// <para>%AppData%\COMIZOA\CLib\l 파일의 정보 참조</para>
+    /// </remarks>
+    [Serializable]
+    public class Singleton<T> where T : class, new()
     {
-        var instance = Load() ?? new T();
-        var method = typeof(T).GetMethod("Init", BindingFlags.Instance | BindingFlags.NonPublic);
-        method?.Invoke(instance, null);
-        return instance;
-    });
-
-    public static T Instance => instance.Value;
-
-    protected Singleton() { }
-       
-    internal static T? Load()
-    {
-        var path = GetPath();
-        if (!File.Exists(path))
-            return null;
-
-        try
+        private static readonly Lazy<T> instance = new Lazy<T>(() =>
         {
-            return DeserializeFromFile(path);
-        }
-        catch (Exception ex)
-        {
-            Serilog.Log.Error(ex, $"{typeof(T).Name}: Load Failed : {path}");
-            return null;
-        }
-    }
+            var instance = Load() ?? new T();
+            var method = typeof(T).GetMethod("Init", BindingFlags.Instance | BindingFlags.NonPublic);
+            method?.Invoke(instance, null);
+            return instance;
+        });
 
-    private static T? DeserializeFromFile(string path)
-    {
-        using (var sr = new StreamReader(path))
-        {
-            var xs = new XmlSerializer(typeof(T));
-            return (T?)xs.Deserialize(sr);
-        }
-    }
-    
-    internal virtual void Save()
-    {
-        var path = GetPath();
-        SaveToFile(path);
-    }
+        public static T Instance => instance.Value;
 
-    private void SaveToFile(string path)
-    {
-        try
+        protected Singleton() { }
+
+        internal static T? Load()
         {
-            using (StreamWriter wr = new StreamWriter(path))
+            var path = GetPath();
+            if (!File.Exists(path))
+                return null;
+
+            try
             {
-                var xs = new XmlSerializer(typeof(T));
-                xs.Serialize(wr, this);
+                return DeserializeFromFile(path);
+            }
+            catch (Exception ex)
+            {
+                Serilog.Log.Error(ex, $"{typeof(T).Name}: Load Failed : {path}");
+                return null;
             }
         }
-        catch (Exception ex)
-        {
-            Serilog.Log.Error(ex, $"{typeof(T).Name}: Save Failed : {path}");
-        }
-    }
 
-    internal static string GetPath()
-    {
-        var name = typeof(T).Name;
-        return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "COMIZOA", "Clib", $"{name}.xml");
+        private static T? DeserializeFromFile(string path)
+        {
+            using (var sr = new StreamReader(path))
+            {
+                var xs = new XmlSerializer(typeof(T));
+                return (T?)xs.Deserialize(sr);
+            }
+        }
+
+        internal virtual void Save()
+        {
+            var path = GetPath();
+            SaveToFile(path);
+        }
+
+        private void SaveToFile(string path)
+        {
+            try
+            {
+                using (StreamWriter wr = new StreamWriter(path))
+                {
+                    var xs = new XmlSerializer(typeof(T));
+                    xs.Serialize(wr, this);
+                }
+            }
+            catch (Exception ex)
+            {
+                Serilog.Log.Error(ex, $"{typeof(T).Name}: Save Failed : {path}");
+            }
+        }
+
+        internal static string GetPath()
+        {
+            var name = typeof(T).Name;
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "COMIZOA", "Clib", $"{name}.xml");
+        }
     }
 }

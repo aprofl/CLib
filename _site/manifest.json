@@ -34,6 +34,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CLib.DeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.DeviceInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.DeviceInfos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.DeviceInfos.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CLib.DeviceManager.yml",
       "output": {
         ".html": {
@@ -54,6 +74,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CLib.FileLogFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.FileLogFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.FileSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.FileSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CLib.IDevice.yml",
       "output": {
         ".html": {
@@ -64,10 +104,100 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CLib.ILogFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.ILogFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.Log.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.Log.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.LogManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.LogManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.LogManagerExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.LogManagerExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CLib.PciDeviceScanner.yml",
       "output": {
         ".html": {
           "relative_path": "api/CLib.PciDeviceScanner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.Platform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.Platform.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.PlatformInfos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.PlatformInfos.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.SQLiteLogFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.SQLiteLogFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.SQLiteSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.SQLiteSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.Singleton-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.Singleton-1.html"
         }
       },
       "version": ""

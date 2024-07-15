@@ -7,10 +7,23 @@ items:
   - CLib.Cosys
   - CLib.DeviceChecker
   - CLib.DeviceFactory
+  - CLib.DeviceInfo
+  - CLib.DeviceInfos
   - CLib.DeviceManager
   - CLib.EtherCATDevice
+  - CLib.FileLogFactory
+  - CLib.FileSettings
   - CLib.IDevice
+  - CLib.ILogFactory
+  - CLib.Log
+  - CLib.LogManager
+  - CLib.LogManagerExtensions
   - CLib.PciDeviceScanner
+  - CLib.Platform
+  - CLib.PlatformInfos
+  - CLib.SQLiteLogFactory
+  - CLib.SQLiteSettings
+  - CLib.Singleton`1
   langs:
   - csharp
   - vb
@@ -21,6 +34,31 @@ items:
   assemblies:
   - CLib
 references:
+- uid: CLib.Singleton`1
+  commentId: T:CLib.Singleton`1
+  href: CLib.Singleton-1.html
+  name: Singleton<T>
+  nameWithType: Singleton<T>
+  fullName: CLib.Singleton<T>
+  nameWithType.vb: Singleton(Of T)
+  fullName.vb: CLib.Singleton(Of T)
+  name.vb: Singleton(Of T)
+  spec.csharp:
+  - uid: CLib.Singleton`1
+    name: Singleton
+    href: CLib.Singleton-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CLib.Singleton`1
+    name: Singleton
+    href: CLib.Singleton-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: CLib.Cosys
   commentId: T:CLib.Cosys
   href: CLib.Cosys.html
@@ -64,6 +102,83 @@ references:
   name: DeviceFactory
   nameWithType: DeviceFactory
   fullName: CLib.DeviceFactory
+- uid: CLib.DeviceInfos
+  commentId: T:CLib.DeviceInfos
+  href: CLib.DeviceInfos.html
+  name: DeviceInfos
+  nameWithType: DeviceInfos
+  fullName: CLib.DeviceInfos
+- uid: CLib.DeviceInfo
+  commentId: T:CLib.DeviceInfo
+  href: CLib.DeviceInfo.html
+  name: DeviceInfo
+  nameWithType: DeviceInfo
+  fullName: CLib.DeviceInfo
+- uid: CLib.PlatformInfos
+  commentId: T:CLib.PlatformInfos
+  href: CLib.PlatformInfos.html
+  name: PlatformInfos
+  nameWithType: PlatformInfos
+  fullName: CLib.PlatformInfos
+- uid: CLib.Platform
+  commentId: T:CLib.Platform
+  href: CLib.Platform.html
+  name: Platform
+  nameWithType: Platform
+  fullName: CLib.Platform
+- uid: CLib.Log
+  commentId: T:CLib.Log
+  href: CLib.Log.html
+  name: Log
+  nameWithType: Log
+  fullName: CLib.Log
+- uid: CLib.LogManagerExtensions
+  commentId: T:CLib.LogManagerExtensions
+  parent: CLib
+  href: CLib.LogManagerExtensions.html
+  name: LogManagerExtensions
+  nameWithType: LogManagerExtensions
+  fullName: CLib.LogManagerExtensions
+- uid: CLib.LogManager
+  commentId: T:CLib.LogManager
+  parent: CLib
+  href: CLib.LogManager.html
+  name: LogManager
+  nameWithType: LogManager
+  fullName: CLib.LogManager
+- uid: CLib.ILogFactory
+  commentId: T:CLib.ILogFactory
+  parent: CLib
+  href: CLib.ILogFactory.html
+  name: ILogFactory
+  nameWithType: ILogFactory
+  fullName: CLib.ILogFactory
+- uid: CLib.FileLogFactory
+  commentId: T:CLib.FileLogFactory
+  href: CLib.FileLogFactory.html
+  name: FileLogFactory
+  nameWithType: FileLogFactory
+  fullName: CLib.FileLogFactory
+- uid: CLib.SQLiteLogFactory
+  commentId: T:CLib.SQLiteLogFactory
+  href: CLib.SQLiteLogFactory.html
+  name: SQLiteLogFactory
+  nameWithType: SQLiteLogFactory
+  fullName: CLib.SQLiteLogFactory
+- uid: CLib.FileSettings
+  commentId: T:CLib.FileSettings
+  parent: CLib
+  href: CLib.FileSettings.html
+  name: FileSettings
+  nameWithType: FileSettings
+  fullName: CLib.FileSettings
+- uid: CLib.SQLiteSettings
+  commentId: T:CLib.SQLiteSettings
+  parent: CLib
+  href: CLib.SQLiteSettings.html
+  name: SQLiteSettings
+  nameWithType: SQLiteSettings
+  fullName: CLib.SQLiteSettings
 - uid: CLib
   commentId: N:CLib
   href: CLib.html

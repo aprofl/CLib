@@ -1,28 +1,32 @@
 ### YamlMime:ManagedReference
 items:
-- uid: CLib.DeviceChecker
-  commentId: T:CLib.DeviceChecker
-  id: DeviceChecker
+- uid: CLib.Log
+  commentId: T:CLib.Log
+  id: Log
   parent: CLib
   children:
-  - CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
+  - CLib.Log.ConfigureLogger
+  - CLib.Log.Error(System.String,System.Int32,System.String,System.Exception)
+  - CLib.Log.Information(System.String,System.Int32,System.String,System.Exception)
+  - CLib.Log.Verbose(System.String,System.Int32,System.String,System.Exception)
+  - CLib.Log.Warning(System.String,System.Int32,System.String,System.Exception)
   langs:
   - csharp
   - vb
-  name: DeviceChecker
-  nameWithType: DeviceChecker
-  fullName: CLib.DeviceChecker
+  name: Log
+  nameWithType: Log
+  fullName: CLib.Log
   type: Class
   source:
-    id: DeviceChecker
-    path: D:\10_Project\CLib\CLib\Cosys.cs
-    startLine: 23
+    id: Log
+    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    startLine: 4
   assemblies:
   - CLib
   namespace: CLib
   syntax:
-    content: public static class DeviceChecker
-    content.vb: Public Module DeviceChecker
+    content: public static class Log
+    content.vb: Public Module Log
   inheritance:
   - System.Object
   inheritedMembers:
@@ -33,38 +37,164 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  commentId: M:CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  id: GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  parent: CLib.DeviceChecker
+- uid: CLib.Log.ConfigureLogger
+  commentId: M:CLib.Log.ConfigureLogger
+  id: ConfigureLogger
+  parent: CLib.Log
   langs:
   - csharp
   - vb
-  name: GetInstalledDevices(List<string>, List<DeviceInfo>)
-  nameWithType: DeviceChecker.GetInstalledDevices(List<string>, List<DeviceInfo>)
-  fullName: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List<string>, System.Collections.Generic.List<CLib.DeviceInfo>)
+  name: ConfigureLogger()
+  nameWithType: Log.ConfigureLogger()
+  fullName: CLib.Log.ConfigureLogger()
   type: Method
   source:
-    id: GetInstalledDevices
-    path: D:\10_Project\CLib\CLib\Cosys.cs
-    startLine: 25
+    id: ConfigureLogger
+    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    startLine: 6
   assemblies:
   - CLib
   namespace: CLib
   syntax:
-    content: public static List<DeviceInfo> GetInstalledDevices(List<string> detectedDeviceIds, List<DeviceInfo> devices)
+    content: public static void ConfigureLogger()
+    content.vb: Public Shared Sub ConfigureLogger()
+  overload: CLib.Log.ConfigureLogger*
+- uid: CLib.Log.Verbose(System.String,System.Int32,System.String,System.Exception)
+  commentId: M:CLib.Log.Verbose(System.String,System.Int32,System.String,System.Exception)
+  id: Verbose(System.String,System.Int32,System.String,System.Exception)
+  parent: CLib.Log
+  langs:
+  - csharp
+  - vb
+  name: Verbose(string, int, string, Exception?)
+  nameWithType: Log.Verbose(string, int, string, Exception?)
+  fullName: CLib.Log.Verbose(string, int, string, System.Exception?)
+  type: Method
+  source:
+    id: Verbose
+    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    startLine: 8
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public static void Verbose(string sender, int errorCode, string message, Exception? ex = null)
     parameters:
-    - id: detectedDeviceIds
-      type: System.Collections.Generic.List{System.String}
-    - id: devices
-      type: System.Collections.Generic.List{CLib.DeviceInfo}
-    return:
-      type: System.Collections.Generic.List{CLib.DeviceInfo}
-    content.vb: Public Shared Function GetInstalledDevices(detectedDeviceIds As List(Of String), devices As List(Of DeviceInfo)) As List(Of DeviceInfo)
-  overload: CLib.DeviceChecker.GetInstalledDevices*
-  nameWithType.vb: DeviceChecker.GetInstalledDevices(List(Of String), List(Of DeviceInfo))
-  fullName.vb: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List(Of String), System.Collections.Generic.List(Of CLib.DeviceInfo))
-  name.vb: GetInstalledDevices(List(Of String), List(Of DeviceInfo))
+    - id: sender
+      type: System.String
+    - id: errorCode
+      type: System.Int32
+    - id: message
+      type: System.String
+    - id: ex
+      type: System.Exception
+    content.vb: Public Shared Sub Verbose(sender As String, errorCode As Integer, message As String, ex As Exception = Nothing)
+  overload: CLib.Log.Verbose*
+  nameWithType.vb: Log.Verbose(String, Integer, String, Exception)
+  fullName.vb: CLib.Log.Verbose(String, Integer, String, System.Exception)
+  name.vb: Verbose(String, Integer, String, Exception)
+- uid: CLib.Log.Information(System.String,System.Int32,System.String,System.Exception)
+  commentId: M:CLib.Log.Information(System.String,System.Int32,System.String,System.Exception)
+  id: Information(System.String,System.Int32,System.String,System.Exception)
+  parent: CLib.Log
+  langs:
+  - csharp
+  - vb
+  name: Information(string, int, string, Exception?)
+  nameWithType: Log.Information(string, int, string, Exception?)
+  fullName: CLib.Log.Information(string, int, string, System.Exception?)
+  type: Method
+  source:
+    id: Information
+    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    startLine: 11
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public static void Information(string sender, int errorCode, string message, Exception? ex = null)
+    parameters:
+    - id: sender
+      type: System.String
+    - id: errorCode
+      type: System.Int32
+    - id: message
+      type: System.String
+    - id: ex
+      type: System.Exception
+    content.vb: Public Shared Sub Information(sender As String, errorCode As Integer, message As String, ex As Exception = Nothing)
+  overload: CLib.Log.Information*
+  nameWithType.vb: Log.Information(String, Integer, String, Exception)
+  fullName.vb: CLib.Log.Information(String, Integer, String, System.Exception)
+  name.vb: Information(String, Integer, String, Exception)
+- uid: CLib.Log.Warning(System.String,System.Int32,System.String,System.Exception)
+  commentId: M:CLib.Log.Warning(System.String,System.Int32,System.String,System.Exception)
+  id: Warning(System.String,System.Int32,System.String,System.Exception)
+  parent: CLib.Log
+  langs:
+  - csharp
+  - vb
+  name: Warning(string, int, string, Exception?)
+  nameWithType: Log.Warning(string, int, string, Exception?)
+  fullName: CLib.Log.Warning(string, int, string, System.Exception?)
+  type: Method
+  source:
+    id: Warning
+    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    startLine: 14
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public static void Warning(string sender, int errorCode, string message, Exception? ex = null)
+    parameters:
+    - id: sender
+      type: System.String
+    - id: errorCode
+      type: System.Int32
+    - id: message
+      type: System.String
+    - id: ex
+      type: System.Exception
+    content.vb: Public Shared Sub Warning(sender As String, errorCode As Integer, message As String, ex As Exception = Nothing)
+  overload: CLib.Log.Warning*
+  nameWithType.vb: Log.Warning(String, Integer, String, Exception)
+  fullName.vb: CLib.Log.Warning(String, Integer, String, System.Exception)
+  name.vb: Warning(String, Integer, String, Exception)
+- uid: CLib.Log.Error(System.String,System.Int32,System.String,System.Exception)
+  commentId: M:CLib.Log.Error(System.String,System.Int32,System.String,System.Exception)
+  id: Error(System.String,System.Int32,System.String,System.Exception)
+  parent: CLib.Log
+  langs:
+  - csharp
+  - vb
+  name: Error(string, int, string, Exception?)
+  nameWithType: Log.Error(string, int, string, Exception?)
+  fullName: CLib.Log.Error(string, int, string, System.Exception?)
+  type: Method
+  source:
+    id: Error
+    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    startLine: 17
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public static void Error(string sender, int errorCode, string message, Exception? ex = null)
+    parameters:
+    - id: sender
+      type: System.String
+    - id: errorCode
+      type: System.Int32
+    - id: message
+      type: System.String
+    - id: ex
+      type: System.Exception
+    content.vb: Public Shared Sub [Error](sender As String, errorCode As Integer, message As String, ex As Exception = Nothing)
+  overload: CLib.Log.Error*
+  nameWithType.vb: Log.Error(String, Integer, String, Exception)
+  fullName.vb: CLib.Log.Error(String, Integer, String, System.Exception)
+  name.vb: Error(String, Integer, String, Exception)
 references:
 - uid: CLib
   commentId: N:CLib
@@ -309,142 +439,63 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: CLib.DeviceChecker.GetInstalledDevices*
-  commentId: Overload:CLib.DeviceChecker.GetInstalledDevices
-  href: CLib.DeviceChecker.html#CLib_DeviceChecker_GetInstalledDevices_System_Collections_Generic_List_System_String__System_Collections_Generic_List_CLib_DeviceInfo__
-  name: GetInstalledDevices
-  nameWithType: DeviceChecker.GetInstalledDevices
-  fullName: CLib.DeviceChecker.GetInstalledDevices
-- uid: System.Collections.Generic.List{System.String}
-  commentId: T:System.Collections.Generic.List{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<string>
-  nameWithType: List<string>
-  fullName: System.Collections.Generic.List<string>
-  nameWithType.vb: List(Of String)
-  fullName.vb: System.Collections.Generic.List(Of String)
-  name.vb: List(Of String)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: System.Collections.Generic.List{CLib.DeviceInfo}
-  commentId: T:System.Collections.Generic.List{CLib.DeviceInfo}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<DeviceInfo>
-  nameWithType: List<DeviceInfo>
-  fullName: System.Collections.Generic.List<CLib.DeviceInfo>
-  nameWithType.vb: List(Of DeviceInfo)
-  fullName.vb: System.Collections.Generic.List(Of CLib.DeviceInfo)
-  name.vb: List(Of DeviceInfo)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: CLib.DeviceInfo
-    name: DeviceInfo
-    href: CLib.DeviceInfo.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: CLib.DeviceInfo
-    name: DeviceInfo
-    href: CLib.DeviceInfo.html
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
+- uid: CLib.Log.ConfigureLogger*
+  commentId: Overload:CLib.Log.ConfigureLogger
+  href: CLib.Log.html#CLib_Log_ConfigureLogger
+  name: ConfigureLogger
+  nameWithType: Log.ConfigureLogger
+  fullName: CLib.Log.ConfigureLogger
+- uid: CLib.Log.Verbose*
+  commentId: Overload:CLib.Log.Verbose
+  href: CLib.Log.html#CLib_Log_Verbose_System_String_System_Int32_System_String_System_Exception_
+  name: Verbose
+  nameWithType: Log.Verbose
+  fullName: CLib.Log.Verbose
+- uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: CLib.Log.Information*
+  commentId: Overload:CLib.Log.Information
+  href: CLib.Log.html#CLib_Log_Information_System_String_System_Int32_System_String_System_Exception_
+  name: Information
+  nameWithType: Log.Information
+  fullName: CLib.Log.Information
+- uid: CLib.Log.Warning*
+  commentId: Overload:CLib.Log.Warning
+  href: CLib.Log.html#CLib_Log_Warning_System_String_System_Int32_System_String_System_Exception_
+  name: Warning
+  nameWithType: Log.Warning
+  fullName: CLib.Log.Warning
+- uid: CLib.Log.Error*
+  commentId: Overload:CLib.Log.Error
+  href: CLib.Log.html#CLib_Log_Error_System_String_System_Int32_System_String_System_Exception_
+  name: Error
+  nameWithType: Log.Error
+  fullName: CLib.Log.Error

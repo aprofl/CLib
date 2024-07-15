@@ -1,11 +1,8 @@
 ﻿using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.TestCorrelator;
-using System;
-using System.IO;
-using System.Linq;
-using Xunit;
 using Xunit.Abstractions;
+using CLib;
 
 public class LogManagerTests : ComplexityTestBase
 {
@@ -27,10 +24,10 @@ public class LogManagerTests : ComplexityTestBase
         };
         LogManager.Instance.FileSettings = fileSettings;
         LogManager.Instance.LogType = LogType.File;
-        Log.ConfigureLogger();
+        CLib.Log.ConfigureLogger();
 
-        Log.Information("TestSender", 0, "This is a test information log.");
-        Log.Error("TestSender", -1, "This is a test error log.");
+        CLib.Log.Information("TestSender", 0, "This is a test information log.");
+        CLib.Log.Error("TestSender", -1, "This is a test error log.");
 
         Serilog.Log.CloseAndFlush();
         var logFiles = Directory.GetFiles(fileSettings.LogFolder, "test-log-*.txt");
@@ -49,10 +46,10 @@ public class LogManagerTests : ComplexityTestBase
         };
         LogManager.Instance.SQLiteSettings = sqliteSettings;
         LogManager.Instance.LogType = LogType.SQLite;
-        Log.ConfigureLogger();
+        CLib.Log.ConfigureLogger();
 
-        Log.Information("TestSender", 0, "This is a test information log.");
-        Log.Error("TestSender", -1, "This is a test error log.");
+        CLib.Log.Information("TestSender", 0, "This is a test information log.");
+        CLib.Log.Error("TestSender", -1, "This is a test error log.");
 
         Serilog.Log.CloseAndFlush();
         Assert.True(File.Exists(sqliteSettings.SqliteDbPath));
@@ -90,13 +87,13 @@ public class LogManagerTests : ComplexityTestBase
                     outputTemplate: fileSettings.OutputTemplate)
                 .CreateLogger();
 
-            Log.Verbose("TestSender", 0, "This is a verbose log.");
-            Log.Information("TestSender", 0, "This is an information log.");
-            Log.Warning("TestSender", 0, "This is a warning log.");
-            Log.Error("TestSender", -1, "This is an error log.");
-            Log.Error("TestSender", -2, "This is an error log.");
+            CLib.Log.Verbose("TestSender", 0, "This is a verbose log.");
+            CLib.Log.Information("TestSender", 0, "This is an information log.");
+            CLib.Log.Warning("TestSender", 0, "This is a warning log.");
+            CLib.Log.Error("TestSender", -1, "This is an error log.");
+            CLib.Log.Error("TestSender", -2, "This is an error log.");
             var exception = new InvalidOperationException("Test exception");
-            Log.Error("TestSender", -3, "This is an error log with exception.", exception);
+            CLib.Log.Error("TestSender", -3, "This is an error log with exception.", exception);
 
             var logEvents = TestCorrelator.GetLogEventsFromCurrentContext().ToList();
             Assert.Contains(logEvents, e => e.Level == LogEventLevel.Verbose

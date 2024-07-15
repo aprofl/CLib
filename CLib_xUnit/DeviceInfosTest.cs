@@ -1,6 +1,4 @@
-using Microsoft.VisualStudio.TestPlatform.Utilities;
-using System.IO;
-using Xunit;
+using CLib;
 using Xunit.Abstractions;
 
 public class DeviceInfosTests : ComplexityTestBase

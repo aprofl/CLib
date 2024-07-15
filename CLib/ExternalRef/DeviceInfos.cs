@@ -1,35 +1,37 @@
 ﻿using System.Xml;
 using System.Xml.Serialization;
 
-/// <summary>
-/// Device의 기본 정보 제공
-/// </summary>
-/// <remarks>
-/// <para>%AppData%\COMIZOA\CLib\DeviceInfos.xml 파일의 정보 참조</para>
-/// <para>EtherCAT 모듈의 경우, Configuration 과정에서 해당 파일에 슬레이브 정보 추가</para>
-/// </remarks>
-[Serializable]
-[XmlRoot("DeviceList")]
-public class DeviceInfos : Singleton<DeviceInfos>
-{    
-    internal void Init()
+namespace CLib
+{
+    /// <summary>
+    /// Device의 기본 정보 제공
+    /// </summary>
+    /// <remarks>
+    /// <para>%AppData%\COMIZOA\CLib\DeviceInfos.xml 파일의 정보 참조</para>
+    /// <para>EtherCAT 모듈의 경우, Configuration 과정에서 해당 파일에 슬레이브 정보 추가</para>
+    /// </remarks>
+    [Serializable]
+    [XmlRoot("DeviceList")]
+    public class DeviceInfos : Singleton<DeviceInfos>
     {
-        if (Devices != null && Devices.Count > 0)
-            return;
+        internal void Init()
+        {
+            if (Devices != null && Devices.Count > 0)
+                return;
 
-        Devices = GetDefaultDeviceInfos();
-        Save();
-    }
+            Devices = GetDefaultDeviceInfos();
+            Save();
+        }
 
-    [XmlElement]
-    public Info Info { get; set; } = new Info();
+        [XmlElement]
+        public Info Info { get; set; } = new Info();
 
-    [XmlElement("DeviceInfo")]
-    public List<DeviceInfo>? Devices { get; set; }
+        [XmlElement("DeviceInfo")]
+        public List<DeviceInfo>? Devices { get; set; }
 
-    private List<DeviceInfo> GetDefaultDeviceInfos()
-    {
-        return new List<DeviceInfo>
+        private List<DeviceInfo> GetDefaultDeviceInfos()
+        {
+            return new List<DeviceInfo>
         {
             new DeviceInfo("A5025032", "COMI-LX502", "PCI_Pulse"),
             new DeviceInfo("A5045032", "COMI-LX504", "PCI_Pulse"),
@@ -93,98 +95,98 @@ public class DeviceInfos : Singleton<DeviceInfos>
             new DeviceInfo("F3015032", "COMI-DX301", "DAQ_DX"),
             new DeviceInfo("F5015032", "COMI-DX501", "DAQ_DX")
         };
+        }
+    }
+
+
+    [Serializable]
+    public class DeviceInfo
+    {
+        public DeviceInfo() { }
+        public DeviceInfo(string code, string name, string platform)
+        {
+            Code = code;
+            Name = name;
+            Platform = platform;
+        }
+
+        [XmlAttribute]
+        public string Code { get; set; } = string.Empty;
+
+        [XmlAttribute]
+        public string Name { get; set; } = string.Empty;
+
+        [XmlAttribute]
+        public string Platform { get; set; } = string.Empty;
+
+        private int di;
+        [XmlAttribute("DI")]
+        public int DI
+        {
+            get => di;
+            set => di = value;
+        }
+
+        public bool ShouldSerializeDI() => di > 0;
+
+        private int doCh;
+        [XmlAttribute("DO")]
+        public int DO
+        {
+            get => doCh;
+            set => doCh = value;
+        }
+
+        public bool ShouldSerializeDO() => doCh > 0;
+
+        private int ai;
+        [XmlAttribute("AI")]
+        public int AI
+        {
+            get => ai;
+            set => ai = value;
+        }
+
+        public bool ShouldSerializeAI() => ai > 0;
+
+        private int ao;
+        [XmlAttribute("AO")]
+        public int AO
+        {
+            get => ao;
+            set => ao = value;
+        }
+
+        public bool ShouldSerializeAO() => ao > 0;
+
+        private int counter;
+        [XmlAttribute("Counter")]
+        public int Counter
+        {
+            get => counter;
+            set => counter = value;
+        }
+
+        public bool ShouldSerializeCounter() => counter > 0;
+
+        private int serial;
+        [XmlAttribute("Serial")]
+        public int Serial
+        {
+            get => serial;
+            set => serial = value;
+        }
+
+        public bool ShouldSerializeSerial() => serial > 0;
+
+        private int axis;
+        [XmlAttribute("Axis")]
+        public int Axis
+        {
+            get => axis;
+            set => axis = value;
+        }
+
+        public bool ShouldSerializeAxis() => axis > 0;
     }
 }
-
-
-[Serializable]
-public class DeviceInfo
-{
-    public DeviceInfo() { }
-    public DeviceInfo(string code, string name, string platform)
-    {
-        Code = code;
-        Name = name;
-        Platform = platform;
-    }
-
-    [XmlAttribute]
-    public string Code { get; set; } = string.Empty;
-
-    [XmlAttribute]
-    public string Name { get; set; } = string.Empty;
-
-    [XmlAttribute]
-    public string Platform { get; set; } = string.Empty;
-
-    private int di;
-    [XmlAttribute("DI")]
-    public int DI
-    {
-        get => di;
-        set => di = value;
-    }
-
-    public bool ShouldSerializeDI() => di > 0;
-
-    private int doCh;
-    [XmlAttribute("DO")]
-    public int DO
-    {
-        get => doCh; 
-        set => doCh = value; 
-    }
-
-    public bool ShouldSerializeDO() => doCh > 0;
-
-    private int ai;
-    [XmlAttribute("AI")]
-    public int AI
-    {
-        get => ai; 
-        set => ai = value; 
-    }
-    
-    public bool ShouldSerializeAI() => ai > 0;
-
-    private int ao;
-    [XmlAttribute("AO")]
-    public int AO
-    {
-        get => ao; 
-        set => ao = value;
-    }
-
-    public bool ShouldSerializeAO() => ao > 0;
-
-    private int counter;
-    [XmlAttribute("Counter")]
-    public int Counter
-    {
-        get => counter;
-        set => counter = value;
-    }
-
-    public bool ShouldSerializeCounter() => counter > 0;
-
-    private int serial;
-    [XmlAttribute("Serial")]
-    public int Serial
-    {
-        get => serial; 
-        set => serial = value;
-    }
-
-    public bool ShouldSerializeSerial() => serial > 0;
-
-    private int axis;
-    [XmlAttribute("Axis")]
-    public int Axis
-    {
-        get => axis;
-        set => axis = value;
-    }
-
-    public bool ShouldSerializeAxis() => axis > 0;
-}
-

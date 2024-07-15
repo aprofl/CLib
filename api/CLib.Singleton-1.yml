@@ -1,30 +1,47 @@
 ### YamlMime:ManagedReference
 items:
-- uid: CLib.DeviceChecker
-  commentId: T:CLib.DeviceChecker
-  id: DeviceChecker
+- uid: CLib.Singleton`1
+  commentId: T:CLib.Singleton`1
+  id: Singleton`1
   parent: CLib
   children:
-  - CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
+  - CLib.Singleton`1.#ctor
+  - CLib.Singleton`1.Instance
   langs:
   - csharp
   - vb
-  name: DeviceChecker
-  nameWithType: DeviceChecker
-  fullName: CLib.DeviceChecker
+  name: Singleton<T>
+  nameWithType: Singleton<T>
+  fullName: CLib.Singleton<T>
   type: Class
   source:
-    id: DeviceChecker
-    path: D:\10_Project\CLib\CLib\Cosys.cs
-    startLine: 23
+    id: Singleton
+    path: D:\10_Project\CLib\CLib\Base\SingleTon.cs
+    startLine: 11
   assemblies:
   - CLib
   namespace: CLib
+  summary: Singleton Base Class
+  remarks: <p>%AppData%\COMIZOA\CLib\l 파일의 정보 참조</p>
+  example: []
   syntax:
-    content: public static class DeviceChecker
-    content.vb: Public Module DeviceChecker
+    content: >-
+      [Serializable]
+
+      public class Singleton<T> where T : class, new()
+    typeParameters:
+    - id: T
+    content.vb: >-
+      <Serializable>
+
+      Public Class Singleton(Of T As {Class, New})
   inheritance:
   - System.Object
+  derivedClasses:
+  - CLib.DeviceInfos
+  - CLib.DeviceManager
+  - CLib.LogManager
+  - CLib.PlatformInfos
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -33,38 +50,65 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  commentId: M:CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  id: GetInstalledDevices(System.Collections.Generic.List{System.String},System.Collections.Generic.List{CLib.DeviceInfo})
-  parent: CLib.DeviceChecker
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  nameWithType.vb: Singleton(Of T)
+  fullName.vb: CLib.Singleton(Of T)
+  name.vb: Singleton(Of T)
+- uid: CLib.Singleton`1.Instance
+  commentId: P:CLib.Singleton`1.Instance
+  id: Instance
+  parent: CLib.Singleton`1
   langs:
   - csharp
   - vb
-  name: GetInstalledDevices(List<string>, List<DeviceInfo>)
-  nameWithType: DeviceChecker.GetInstalledDevices(List<string>, List<DeviceInfo>)
-  fullName: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List<string>, System.Collections.Generic.List<CLib.DeviceInfo>)
-  type: Method
+  name: Instance
+  nameWithType: Singleton<T>.Instance
+  fullName: CLib.Singleton<T>.Instance
+  type: Property
   source:
-    id: GetInstalledDevices
-    path: D:\10_Project\CLib\CLib\Cosys.cs
-    startLine: 25
+    id: Instance
+    path: D:\10_Project\CLib\CLib\Base\SingleTon.cs
+    startLine: 22
   assemblies:
   - CLib
   namespace: CLib
   syntax:
-    content: public static List<DeviceInfo> GetInstalledDevices(List<string> detectedDeviceIds, List<DeviceInfo> devices)
-    parameters:
-    - id: detectedDeviceIds
-      type: System.Collections.Generic.List{System.String}
-    - id: devices
-      type: System.Collections.Generic.List{CLib.DeviceInfo}
+    content: public static T Instance { get; }
+    parameters: []
     return:
-      type: System.Collections.Generic.List{CLib.DeviceInfo}
-    content.vb: Public Shared Function GetInstalledDevices(detectedDeviceIds As List(Of String), devices As List(Of DeviceInfo)) As List(Of DeviceInfo)
-  overload: CLib.DeviceChecker.GetInstalledDevices*
-  nameWithType.vb: DeviceChecker.GetInstalledDevices(List(Of String), List(Of DeviceInfo))
-  fullName.vb: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List(Of String), System.Collections.Generic.List(Of CLib.DeviceInfo))
-  name.vb: GetInstalledDevices(List(Of String), List(Of DeviceInfo))
+      type: '{T}'
+    content.vb: Public Shared ReadOnly Property Instance As T
+  overload: CLib.Singleton`1.Instance*
+  nameWithType.vb: Singleton(Of T).Instance
+  fullName.vb: CLib.Singleton(Of T).Instance
+- uid: CLib.Singleton`1.#ctor
+  commentId: M:CLib.Singleton`1.#ctor
+  id: '#ctor'
+  parent: CLib.Singleton`1
+  langs:
+  - csharp
+  - vb
+  name: Singleton()
+  nameWithType: Singleton<T>.Singleton()
+  fullName: CLib.Singleton<T>.Singleton()
+  type: Constructor
+  source:
+    id: .ctor
+    path: D:\10_Project\CLib\CLib\Base\SingleTon.cs
+    startLine: 24
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: protected Singleton()
+    content.vb: Protected Sub New()
+  overload: CLib.Singleton`1.#ctor*
+  nameWithType.vb: Singleton(Of T).New()
+  fullName.vb: CLib.Singleton(Of T).New()
+  name.vb: New()
 references:
 - uid: CLib
   commentId: N:CLib
@@ -309,142 +353,31 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: CLib.DeviceChecker.GetInstalledDevices*
-  commentId: Overload:CLib.DeviceChecker.GetInstalledDevices
-  href: CLib.DeviceChecker.html#CLib_DeviceChecker_GetInstalledDevices_System_Collections_Generic_List_System_String__System_Collections_Generic_List_CLib_DeviceInfo__
-  name: GetInstalledDevices
-  nameWithType: DeviceChecker.GetInstalledDevices
-  fullName: CLib.DeviceChecker.GetInstalledDevices
-- uid: System.Collections.Generic.List{System.String}
-  commentId: T:System.Collections.Generic.List{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<string>
-  nameWithType: List<string>
-  fullName: System.Collections.Generic.List<string>
-  nameWithType.vb: List(Of String)
-  fullName.vb: System.Collections.Generic.List(Of String)
-  name.vb: List(Of String)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-- uid: System.Collections.Generic.List{CLib.DeviceInfo}
-  commentId: T:System.Collections.Generic.List{CLib.DeviceInfo}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<DeviceInfo>
-  nameWithType: List<DeviceInfo>
-  fullName: System.Collections.Generic.List<CLib.DeviceInfo>
-  nameWithType.vb: List(Of DeviceInfo)
-  fullName.vb: System.Collections.Generic.List(Of CLib.DeviceInfo)
-  name.vb: List(Of DeviceInfo)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: CLib.DeviceInfo
-    name: DeviceInfo
-    href: CLib.DeviceInfo.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: CLib.DeviceInfo
-    name: DeviceInfo
-    href: CLib.DeviceInfo.html
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CLib.Singleton`1.Instance*
+  commentId: Overload:CLib.Singleton`1.Instance
+  href: CLib.Singleton-1.html#CLib_Singleton_1_Instance
+  name: Instance
+  nameWithType: Singleton<T>.Instance
+  fullName: CLib.Singleton<T>.Instance
+  nameWithType.vb: Singleton(Of T).Instance
+  fullName.vb: CLib.Singleton(Of T).Instance
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  commentId: '!:T'
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CLib.Singleton`1.#ctor*
+  commentId: Overload:CLib.Singleton`1.#ctor
+  href: CLib.Singleton-1.html#CLib_Singleton_1__ctor
+  name: Singleton
+  nameWithType: Singleton<T>.Singleton
+  fullName: CLib.Singleton<T>.Singleton
+  nameWithType.vb: Singleton(Of T).New
+  fullName.vb: CLib.Singleton(Of T).New
+  name.vb: New

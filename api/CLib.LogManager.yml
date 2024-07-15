@@ -1,34 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: CLib.DeviceManager
-  commentId: T:CLib.DeviceManager
-  id: DeviceManager
+- uid: CLib.LogManager
+  commentId: T:CLib.LogManager
+  id: LogManager
   parent: CLib
   children:
-  - CLib.DeviceManager.#ctor
-  - CLib.DeviceManager.ScanForDevices
+  - CLib.LogManager.ConfigureLogger
+  - CLib.LogManager.FileSettings
+  - CLib.LogManager.LogType
+  - CLib.LogManager.SQLiteSettings
   langs:
   - csharp
   - vb
-  name: DeviceManager
-  nameWithType: DeviceManager
-  fullName: CLib.DeviceManager
+  name: LogManager
+  nameWithType: LogManager
+  fullName: CLib.LogManager
   type: Class
   source:
-    id: DeviceManager
-    path: D:\10_Project\CLib\CLib\Cosys.cs
-    startLine: 36
+    id: LogManager
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 9
   assemblies:
   - CLib
   namespace: CLib
   syntax:
-    content: 'public class DeviceManager : Singleton<DeviceManager>'
-    content.vb: Public Class DeviceManager Inherits Singleton(Of DeviceManager)
+    content: 'public class LogManager : Singleton<LogManager>'
+    content.vb: Public Class LogManager Inherits Singleton(Of LogManager)
   inheritance:
   - System.Object
-  - CLib.Singleton{CLib.DeviceManager}
+  - CLib.Singleton{CLib.LogManager}
   inheritedMembers:
-  - CLib.Singleton{CLib.DeviceManager}.Instance
+  - CLib.Singleton{CLib.LogManager}.Instance
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -36,55 +38,105 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: CLib.DeviceManager.#ctor
-  commentId: M:CLib.DeviceManager.#ctor
-  id: '#ctor'
-  parent: CLib.DeviceManager
+  extensionMethods:
+  - CLib.LogManager.CLib.LogManagerExtensions.Write(LogItem)
+- uid: CLib.LogManager.ConfigureLogger
+  commentId: M:CLib.LogManager.ConfigureLogger
+  id: ConfigureLogger
+  parent: CLib.LogManager
   langs:
   - csharp
   - vb
-  name: DeviceManager()
-  nameWithType: DeviceManager.DeviceManager()
-  fullName: CLib.DeviceManager.DeviceManager()
-  type: Constructor
+  name: ConfigureLogger()
+  nameWithType: LogManager.ConfigureLogger()
+  fullName: CLib.LogManager.ConfigureLogger()
+  type: Method
   source:
-    id: .ctor
-    path: D:\10_Project\CLib\CLib\Cosys.cs
-    startLine: 40
+    id: ConfigureLogger
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 16
   assemblies:
   - CLib
   namespace: CLib
   syntax:
-    content: public DeviceManager()
-    content.vb: Public Sub New()
-  overload: CLib.DeviceManager.#ctor*
-  nameWithType.vb: DeviceManager.New()
-  fullName.vb: CLib.DeviceManager.New()
-  name.vb: New()
-- uid: CLib.DeviceManager.ScanForDevices
-  commentId: M:CLib.DeviceManager.ScanForDevices
-  id: ScanForDevices
-  parent: CLib.DeviceManager
+    content: public void ConfigureLogger()
+    content.vb: Public Sub ConfigureLogger()
+  overload: CLib.LogManager.ConfigureLogger*
+- uid: CLib.LogManager.LogType
+  commentId: P:CLib.LogManager.LogType
+  id: LogType
+  parent: CLib.LogManager
   langs:
   - csharp
   - vb
-  name: ScanForDevices()
-  nameWithType: DeviceManager.ScanForDevices()
-  fullName: CLib.DeviceManager.ScanForDevices()
-  type: Method
+  name: LogType
+  nameWithType: LogManager.LogType
+  fullName: CLib.LogManager.LogType
+  type: Property
   source:
-    id: ScanForDevices
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    id: LogType
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 30
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public LogType LogType { get; set; }
+    parameters: []
+    return:
+      type: LogType
+    content.vb: Public Property LogType As LogType
+  overload: CLib.LogManager.LogType*
+- uid: CLib.LogManager.FileSettings
+  commentId: P:CLib.LogManager.FileSettings
+  id: FileSettings
+  parent: CLib.LogManager
+  langs:
+  - csharp
+  - vb
+  name: FileSettings
+  nameWithType: LogManager.FileSettings
+  fullName: CLib.LogManager.FileSettings
+  type: Property
+  source:
+    id: FileSettings
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 42
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public FileSettings FileSettings { get; set; }
+    parameters: []
+    return:
+      type: CLib.FileSettings
+    content.vb: Public Property FileSettings As FileSettings
+  overload: CLib.LogManager.FileSettings*
+- uid: CLib.LogManager.SQLiteSettings
+  commentId: P:CLib.LogManager.SQLiteSettings
+  id: SQLiteSettings
+  parent: CLib.LogManager
+  langs:
+  - csharp
+  - vb
+  name: SQLiteSettings
+  nameWithType: LogManager.SQLiteSettings
+  fullName: CLib.LogManager.SQLiteSettings
+  type: Property
+  source:
+    id: SQLiteSettings
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
     startLine: 45
   assemblies:
   - CLib
   namespace: CLib
   syntax:
-    content: public List<string> ScanForDevices()
+    content: public SQLiteSettings SQLiteSettings { get; set; }
+    parameters: []
     return:
-      type: System.Collections.Generic.List{System.String}
-    content.vb: Public Function ScanForDevices() As List(Of String)
-  overload: CLib.DeviceManager.ScanForDevices*
+      type: CLib.SQLiteSettings
+    content.vb: Public Property SQLiteSettings As SQLiteSettings
+  overload: CLib.LogManager.SQLiteSettings*
 references:
 - uid: CLib
   commentId: N:CLib
@@ -103,25 +155,25 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: CLib.Singleton{CLib.DeviceManager}
-  commentId: T:CLib.Singleton{CLib.DeviceManager}
+- uid: CLib.Singleton{CLib.LogManager}
+  commentId: T:CLib.Singleton{CLib.LogManager}
   parent: CLib
   definition: CLib.Singleton`1
   href: CLib.Singleton-1.html
-  name: Singleton<DeviceManager>
-  nameWithType: Singleton<DeviceManager>
-  fullName: CLib.Singleton<CLib.DeviceManager>
-  nameWithType.vb: Singleton(Of DeviceManager)
-  fullName.vb: CLib.Singleton(Of CLib.DeviceManager)
-  name.vb: Singleton(Of DeviceManager)
+  name: Singleton<LogManager>
+  nameWithType: Singleton<LogManager>
+  fullName: CLib.Singleton<CLib.LogManager>
+  nameWithType.vb: Singleton(Of LogManager)
+  fullName.vb: CLib.Singleton(Of CLib.LogManager)
+  name.vb: Singleton(Of LogManager)
   spec.csharp:
   - uid: CLib.Singleton`1
     name: Singleton
     href: CLib.Singleton-1.html
   - name: <
-  - uid: CLib.DeviceManager
-    name: DeviceManager
-    href: CLib.DeviceManager.html
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
   - name: '>'
   spec.vb:
   - uid: CLib.Singleton`1
@@ -130,20 +182,20 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: CLib.DeviceManager
-    name: DeviceManager
-    href: CLib.DeviceManager.html
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
   - name: )
-- uid: CLib.Singleton{CLib.DeviceManager}.Instance
-  commentId: P:CLib.Singleton{CLib.DeviceManager}.Instance
-  parent: CLib.Singleton{CLib.DeviceManager}
+- uid: CLib.Singleton{CLib.LogManager}.Instance
+  commentId: P:CLib.Singleton{CLib.LogManager}.Instance
+  parent: CLib.Singleton{CLib.LogManager}
   definition: CLib.Singleton`1.Instance
   href: CLib.Singleton-1.html#CLib_Singleton_1_Instance
   name: Instance
-  nameWithType: Singleton<DeviceManager>.Instance
-  fullName: CLib.Singleton<CLib.DeviceManager>.Instance
-  nameWithType.vb: Singleton(Of DeviceManager).Instance
-  fullName.vb: CLib.Singleton(Of CLib.DeviceManager).Instance
+  nameWithType: Singleton<LogManager>.Instance
+  fullName: CLib.Singleton<CLib.LogManager>.Instance
+  nameWithType.vb: Singleton(Of LogManager).Instance
+  fullName.vb: CLib.Singleton(Of CLib.LogManager).Instance
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -363,6 +415,42 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: CLib.LogManager.CLib.LogManagerExtensions.Write(LogItem)
+  commentId: M:CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+  parent: CLib.LogManagerExtensions
+  definition: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+  href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  name: Write(LogManager, LogItem)
+  nameWithType: LogManagerExtensions.Write(LogManager, LogItem)
+  fullName: CLib.LogManagerExtensions.Write(CLib.LogManager, LogItem)
+  spec.csharp:
+  - uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+    name: Write
+    href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  - name: (
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: ','
+  - name: " "
+  - uid: LogItem
+    name: LogItem
+    href: LogItem.html
+  - name: )
+  spec.vb:
+  - uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+    name: Write
+    href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  - name: (
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: ','
+  - name: " "
+  - uid: LogItem
+    name: LogItem
+    href: LogItem.html
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -403,118 +491,88 @@ references:
   fullName: CLib.Singleton<T>.Instance
   nameWithType.vb: Singleton(Of T).Instance
   fullName.vb: CLib.Singleton(Of T).Instance
-- uid: CLib.DeviceManager.#ctor*
-  commentId: Overload:CLib.DeviceManager.#ctor
-  href: CLib.DeviceManager.html#CLib_DeviceManager__ctor
-  name: DeviceManager
-  nameWithType: DeviceManager.DeviceManager
-  fullName: CLib.DeviceManager.DeviceManager
-  nameWithType.vb: DeviceManager.New
-  fullName.vb: CLib.DeviceManager.New
-  name.vb: New
-- uid: CLib.DeviceManager.ScanForDevices*
-  commentId: Overload:CLib.DeviceManager.ScanForDevices
-  href: CLib.DeviceManager.html#CLib_DeviceManager_ScanForDevices
-  name: ScanForDevices
-  nameWithType: DeviceManager.ScanForDevices
-  fullName: CLib.DeviceManager.ScanForDevices
-- uid: System.Collections.Generic.List{System.String}
-  commentId: T:System.Collections.Generic.List{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<string>
-  nameWithType: List<string>
-  fullName: System.Collections.Generic.List<string>
-  nameWithType.vb: List(Of String)
-  fullName.vb: System.Collections.Generic.List(Of String)
-  name.vb: List(Of String)
+- uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+  commentId: M:CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+  href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  name: Write(LogManager, LogItem)
+  nameWithType: LogManagerExtensions.Write(LogManager, LogItem)
+  fullName: CLib.LogManagerExtensions.Write(CLib.LogManager, LogItem)
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+    name: Write
+    href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
   - name: (
-  - name: Of
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: ','
   - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+  - uid: LogItem
+    name: LogItem
+    href: LogItem.html
   - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+    name: Write
+    href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
   - name: (
-  - name: Of
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: ','
   - name: " "
-  - name: T
+  - uid: LogItem
+    name: LogItem
+    href: LogItem.html
   - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CLib.LogManagerExtensions
+  commentId: T:CLib.LogManagerExtensions
+  parent: CLib
+  href: CLib.LogManagerExtensions.html
+  name: LogManagerExtensions
+  nameWithType: LogManagerExtensions
+  fullName: CLib.LogManagerExtensions
+- uid: CLib.LogManager.ConfigureLogger*
+  commentId: Overload:CLib.LogManager.ConfigureLogger
+  href: CLib.LogManager.html#CLib_LogManager_ConfigureLogger
+  name: ConfigureLogger
+  nameWithType: LogManager.ConfigureLogger
+  fullName: CLib.LogManager.ConfigureLogger
+- uid: CLib.LogManager.LogType*
+  commentId: Overload:CLib.LogManager.LogType
+  href: CLib.LogManager.html#CLib_LogManager_LogType
+  name: LogType
+  nameWithType: LogManager.LogType
+  fullName: CLib.LogManager.LogType
+- uid: LogType
+  commentId: T:LogType
+  href: LogType.html
+  name: LogType
+  nameWithType: LogType
+  fullName: LogType
+- uid: CLib.LogManager.FileSettings*
+  commentId: Overload:CLib.LogManager.FileSettings
+  href: CLib.LogManager.html#CLib_LogManager_FileSettings
+  name: FileSettings
+  nameWithType: LogManager.FileSettings
+  fullName: CLib.LogManager.FileSettings
+- uid: CLib.FileSettings
+  commentId: T:CLib.FileSettings
+  parent: CLib
+  href: CLib.FileSettings.html
+  name: FileSettings
+  nameWithType: FileSettings
+  fullName: CLib.FileSettings
+- uid: CLib.LogManager.SQLiteSettings*
+  commentId: Overload:CLib.LogManager.SQLiteSettings
+  href: CLib.LogManager.html#CLib_LogManager_SQLiteSettings
+  name: SQLiteSettings
+  nameWithType: LogManager.SQLiteSettings
+  fullName: CLib.LogManager.SQLiteSettings
+- uid: CLib.SQLiteSettings
+  commentId: T:CLib.SQLiteSettings
+  parent: CLib
+  href: CLib.SQLiteSettings.html
+  name: SQLiteSettings
+  nameWithType: SQLiteSettings
+  fullName: CLib.SQLiteSettings
