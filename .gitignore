@@ -1,0 +1,18 @@
+.vs/
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+_site/
+.vscode/
+.idea/
+
+# OS별 파일
+.DS_Store
+Thumbs.db
+
+*.log
+*.tmp

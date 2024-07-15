@@ -1,0 +1,398 @@
+### YamlMime:ManagedReference
+items:
+- uid: CLib.FileLogFactory
+  commentId: T:CLib.FileLogFactory
+  id: FileLogFactory
+  parent: CLib
+  children:
+  - CLib.FileLogFactory.#ctor(CLib.FileSettings)
+  - CLib.FileLogFactory.CreateLoggerConfiguration
+  langs:
+  - csharp
+  - vb
+  name: FileLogFactory
+  nameWithType: FileLogFactory
+  fullName: CLib.FileLogFactory
+  type: Class
+  source:
+    id: FileLogFactory
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 54
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: 'public class FileLogFactory : ILogFactory'
+    content.vb: Public Class FileLogFactory Implements ILogFactory
+  inheritance:
+  - System.Object
+  implements:
+  - CLib.ILogFactory
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CLib.FileLogFactory.#ctor(CLib.FileSettings)
+  commentId: M:CLib.FileLogFactory.#ctor(CLib.FileSettings)
+  id: '#ctor(CLib.FileSettings)'
+  parent: CLib.FileLogFactory
+  langs:
+  - csharp
+  - vb
+  name: FileLogFactory(FileSettings)
+  nameWithType: FileLogFactory.FileLogFactory(FileSettings)
+  fullName: CLib.FileLogFactory.FileLogFactory(CLib.FileSettings)
+  type: Constructor
+  source:
+    id: .ctor
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 58
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public FileLogFactory(FileSettings fileSettings)
+    parameters:
+    - id: fileSettings
+      type: CLib.FileSettings
+    content.vb: Public Sub New(fileSettings As FileSettings)
+  overload: CLib.FileLogFactory.#ctor*
+  nameWithType.vb: FileLogFactory.New(FileSettings)
+  fullName.vb: CLib.FileLogFactory.New(CLib.FileSettings)
+  name.vb: New(FileSettings)
+- uid: CLib.FileLogFactory.CreateLoggerConfiguration
+  commentId: M:CLib.FileLogFactory.CreateLoggerConfiguration
+  id: CreateLoggerConfiguration
+  parent: CLib.FileLogFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateLoggerConfiguration()
+  nameWithType: FileLogFactory.CreateLoggerConfiguration()
+  fullName: CLib.FileLogFactory.CreateLoggerConfiguration()
+  type: Method
+  source:
+    id: CreateLoggerConfiguration
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 63
+  assemblies:
+  - CLib
+  namespace: CLib
+  example: []
+  syntax:
+    content: public LoggerConfiguration CreateLoggerConfiguration()
+    return:
+      type: Serilog.LoggerConfiguration
+    content.vb: Public Function CreateLoggerConfiguration() As LoggerConfiguration
+  overload: CLib.FileLogFactory.CreateLoggerConfiguration*
+  implements:
+  - CLib.ILogFactory.CreateLoggerConfiguration
+references:
+- uid: CLib
+  commentId: N:CLib
+  href: CLib.html
+  name: CLib
+  nameWithType: CLib
+  fullName: CLib
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: CLib.ILogFactory
+  commentId: T:CLib.ILogFactory
+  parent: CLib
+  href: CLib.ILogFactory.html
+  name: ILogFactory
+  nameWithType: ILogFactory
+  fullName: CLib.ILogFactory
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CLib.FileLogFactory.#ctor*
+  commentId: Overload:CLib.FileLogFactory.#ctor
+  href: CLib.FileLogFactory.html#CLib_FileLogFactory__ctor_CLib_FileSettings_
+  name: FileLogFactory
+  nameWithType: FileLogFactory.FileLogFactory
+  fullName: CLib.FileLogFactory.FileLogFactory
+  nameWithType.vb: FileLogFactory.New
+  fullName.vb: CLib.FileLogFactory.New
+  name.vb: New
+- uid: CLib.FileSettings
+  commentId: T:CLib.FileSettings
+  parent: CLib
+  href: CLib.FileSettings.html
+  name: FileSettings
+  nameWithType: FileSettings
+  fullName: CLib.FileSettings
+- uid: CLib.FileLogFactory.CreateLoggerConfiguration*
+  commentId: Overload:CLib.FileLogFactory.CreateLoggerConfiguration
+  href: CLib.FileLogFactory.html#CLib_FileLogFactory_CreateLoggerConfiguration
+  name: CreateLoggerConfiguration
+  nameWithType: FileLogFactory.CreateLoggerConfiguration
+  fullName: CLib.FileLogFactory.CreateLoggerConfiguration
+- uid: CLib.ILogFactory.CreateLoggerConfiguration
+  commentId: M:CLib.ILogFactory.CreateLoggerConfiguration
+  parent: CLib.ILogFactory
+  href: CLib.ILogFactory.html#CLib_ILogFactory_CreateLoggerConfiguration
+  name: CreateLoggerConfiguration()
+  nameWithType: ILogFactory.CreateLoggerConfiguration()
+  fullName: CLib.ILogFactory.CreateLoggerConfiguration()
+  spec.csharp:
+  - uid: CLib.ILogFactory.CreateLoggerConfiguration
+    name: CreateLoggerConfiguration
+    href: CLib.ILogFactory.html#CLib_ILogFactory_CreateLoggerConfiguration
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: CLib.ILogFactory.CreateLoggerConfiguration
+    name: CreateLoggerConfiguration
+    href: CLib.ILogFactory.html#CLib_ILogFactory_CreateLoggerConfiguration
+  - name: (
+  - name: )
+- uid: Serilog.LoggerConfiguration
+  commentId: T:Serilog.LoggerConfiguration
+  parent: Serilog
+  isExternal: true
+  name: LoggerConfiguration
+  nameWithType: LoggerConfiguration
+  fullName: Serilog.LoggerConfiguration
+- uid: Serilog
+  commentId: N:Serilog
+  isExternal: true
+  name: Serilog
+  nameWithType: Serilog
+  fullName: Serilog

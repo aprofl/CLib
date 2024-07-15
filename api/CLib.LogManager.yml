@@ -1,0 +1,578 @@
+### YamlMime:ManagedReference
+items:
+- uid: CLib.LogManager
+  commentId: T:CLib.LogManager
+  id: LogManager
+  parent: CLib
+  children:
+  - CLib.LogManager.ConfigureLogger
+  - CLib.LogManager.FileSettings
+  - CLib.LogManager.LogType
+  - CLib.LogManager.SQLiteSettings
+  langs:
+  - csharp
+  - vb
+  name: LogManager
+  nameWithType: LogManager
+  fullName: CLib.LogManager
+  type: Class
+  source:
+    id: LogManager
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 9
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: 'public class LogManager : Singleton<LogManager>'
+    content.vb: Public Class LogManager Inherits Singleton(Of LogManager)
+  inheritance:
+  - System.Object
+  - CLib.Singleton{CLib.LogManager}
+  inheritedMembers:
+  - CLib.Singleton{CLib.LogManager}.Instance
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - CLib.LogManager.CLib.LogManagerExtensions.Write(LogItem)
+- uid: CLib.LogManager.ConfigureLogger
+  commentId: M:CLib.LogManager.ConfigureLogger
+  id: ConfigureLogger
+  parent: CLib.LogManager
+  langs:
+  - csharp
+  - vb
+  name: ConfigureLogger()
+  nameWithType: LogManager.ConfigureLogger()
+  fullName: CLib.LogManager.ConfigureLogger()
+  type: Method
+  source:
+    id: ConfigureLogger
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 16
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public void ConfigureLogger()
+    content.vb: Public Sub ConfigureLogger()
+  overload: CLib.LogManager.ConfigureLogger*
+- uid: CLib.LogManager.LogType
+  commentId: P:CLib.LogManager.LogType
+  id: LogType
+  parent: CLib.LogManager
+  langs:
+  - csharp
+  - vb
+  name: LogType
+  nameWithType: LogManager.LogType
+  fullName: CLib.LogManager.LogType
+  type: Property
+  source:
+    id: LogType
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 30
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public LogType LogType { get; set; }
+    parameters: []
+    return:
+      type: LogType
+    content.vb: Public Property LogType As LogType
+  overload: CLib.LogManager.LogType*
+- uid: CLib.LogManager.FileSettings
+  commentId: P:CLib.LogManager.FileSettings
+  id: FileSettings
+  parent: CLib.LogManager
+  langs:
+  - csharp
+  - vb
+  name: FileSettings
+  nameWithType: LogManager.FileSettings
+  fullName: CLib.LogManager.FileSettings
+  type: Property
+  source:
+    id: FileSettings
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 42
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public FileSettings FileSettings { get; set; }
+    parameters: []
+    return:
+      type: CLib.FileSettings
+    content.vb: Public Property FileSettings As FileSettings
+  overload: CLib.LogManager.FileSettings*
+- uid: CLib.LogManager.SQLiteSettings
+  commentId: P:CLib.LogManager.SQLiteSettings
+  id: SQLiteSettings
+  parent: CLib.LogManager
+  langs:
+  - csharp
+  - vb
+  name: SQLiteSettings
+  nameWithType: LogManager.SQLiteSettings
+  fullName: CLib.LogManager.SQLiteSettings
+  type: Property
+  source:
+    id: SQLiteSettings
+    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    startLine: 45
+  assemblies:
+  - CLib
+  namespace: CLib
+  syntax:
+    content: public SQLiteSettings SQLiteSettings { get; set; }
+    parameters: []
+    return:
+      type: CLib.SQLiteSettings
+    content.vb: Public Property SQLiteSettings As SQLiteSettings
+  overload: CLib.LogManager.SQLiteSettings*
+references:
+- uid: CLib
+  commentId: N:CLib
+  href: CLib.html
+  name: CLib
+  nameWithType: CLib
+  fullName: CLib
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: CLib.Singleton{CLib.LogManager}
+  commentId: T:CLib.Singleton{CLib.LogManager}
+  parent: CLib
+  definition: CLib.Singleton`1
+  href: CLib.Singleton-1.html
+  name: Singleton<LogManager>
+  nameWithType: Singleton<LogManager>
+  fullName: CLib.Singleton<CLib.LogManager>
+  nameWithType.vb: Singleton(Of LogManager)
+  fullName.vb: CLib.Singleton(Of CLib.LogManager)
+  name.vb: Singleton(Of LogManager)
+  spec.csharp:
+  - uid: CLib.Singleton`1
+    name: Singleton
+    href: CLib.Singleton-1.html
+  - name: <
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: '>'
+  spec.vb:
+  - uid: CLib.Singleton`1
+    name: Singleton
+    href: CLib.Singleton-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: )
+- uid: CLib.Singleton{CLib.LogManager}.Instance
+  commentId: P:CLib.Singleton{CLib.LogManager}.Instance
+  parent: CLib.Singleton{CLib.LogManager}
+  definition: CLib.Singleton`1.Instance
+  href: CLib.Singleton-1.html#CLib_Singleton_1_Instance
+  name: Instance
+  nameWithType: Singleton<LogManager>.Instance
+  fullName: CLib.Singleton<CLib.LogManager>.Instance
+  nameWithType.vb: Singleton(Of LogManager).Instance
+  fullName.vb: CLib.Singleton(Of CLib.LogManager).Instance
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CLib.LogManager.CLib.LogManagerExtensions.Write(LogItem)
+  commentId: M:CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+  parent: CLib.LogManagerExtensions
+  definition: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+  href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  name: Write(LogManager, LogItem)
+  nameWithType: LogManagerExtensions.Write(LogManager, LogItem)
+  fullName: CLib.LogManagerExtensions.Write(CLib.LogManager, LogItem)
+  spec.csharp:
+  - uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+    name: Write
+    href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  - name: (
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: ','
+  - name: " "
+  - uid: LogItem
+    name: LogItem
+    href: LogItem.html
+  - name: )
+  spec.vb:
+  - uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+    name: Write
+    href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  - name: (
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: ','
+  - name: " "
+  - uid: LogItem
+    name: LogItem
+    href: LogItem.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CLib.Singleton`1
+  commentId: T:CLib.Singleton`1
+  href: CLib.Singleton-1.html
+  name: Singleton<T>
+  nameWithType: Singleton<T>
+  fullName: CLib.Singleton<T>
+  nameWithType.vb: Singleton(Of T)
+  fullName.vb: CLib.Singleton(Of T)
+  name.vb: Singleton(Of T)
+  spec.csharp:
+  - uid: CLib.Singleton`1
+    name: Singleton
+    href: CLib.Singleton-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: CLib.Singleton`1
+    name: Singleton
+    href: CLib.Singleton-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CLib.Singleton`1.Instance
+  commentId: P:CLib.Singleton`1.Instance
+  href: CLib.Singleton-1.html#CLib_Singleton_1_Instance
+  name: Instance
+  nameWithType: Singleton<T>.Instance
+  fullName: CLib.Singleton<T>.Instance
+  nameWithType.vb: Singleton(Of T).Instance
+  fullName.vb: CLib.Singleton(Of T).Instance
+- uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+  commentId: M:CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+  href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  name: Write(LogManager, LogItem)
+  nameWithType: LogManagerExtensions.Write(LogManager, LogItem)
+  fullName: CLib.LogManagerExtensions.Write(CLib.LogManager, LogItem)
+  spec.csharp:
+  - uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+    name: Write
+    href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  - name: (
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: ','
+  - name: " "
+  - uid: LogItem
+    name: LogItem
+    href: LogItem.html
+  - name: )
+  spec.vb:
+  - uid: CLib.LogManagerExtensions.Write(CLib.LogManager,LogItem)
+    name: Write
+    href: CLib.LogManagerExtensions.html#CLib_LogManagerExtensions_Write_CLib_LogManager_LogItem_
+  - name: (
+  - uid: CLib.LogManager
+    name: LogManager
+    href: CLib.LogManager.html
+  - name: ','
+  - name: " "
+  - uid: LogItem
+    name: LogItem
+    href: LogItem.html
+  - name: )
+- uid: CLib.LogManagerExtensions
+  commentId: T:CLib.LogManagerExtensions
+  parent: CLib
+  href: CLib.LogManagerExtensions.html
+  name: LogManagerExtensions
+  nameWithType: LogManagerExtensions
+  fullName: CLib.LogManagerExtensions
+- uid: CLib.LogManager.ConfigureLogger*
+  commentId: Overload:CLib.LogManager.ConfigureLogger
+  href: CLib.LogManager.html#CLib_LogManager_ConfigureLogger
+  name: ConfigureLogger
+  nameWithType: LogManager.ConfigureLogger
+  fullName: CLib.LogManager.ConfigureLogger
+- uid: CLib.LogManager.LogType*
+  commentId: Overload:CLib.LogManager.LogType
+  href: CLib.LogManager.html#CLib_LogManager_LogType
+  name: LogType
+  nameWithType: LogManager.LogType
+  fullName: CLib.LogManager.LogType
+- uid: LogType
+  commentId: T:LogType
+  href: LogType.html
+  name: LogType
+  nameWithType: LogType
+  fullName: LogType
+- uid: CLib.LogManager.FileSettings*
+  commentId: Overload:CLib.LogManager.FileSettings
+  href: CLib.LogManager.html#CLib_LogManager_FileSettings
+  name: FileSettings
+  nameWithType: LogManager.FileSettings
+  fullName: CLib.LogManager.FileSettings
+- uid: CLib.FileSettings
+  commentId: T:CLib.FileSettings
+  parent: CLib
+  href: CLib.FileSettings.html
+  name: FileSettings
+  nameWithType: FileSettings
+  fullName: CLib.FileSettings
+- uid: CLib.LogManager.SQLiteSettings*
+  commentId: Overload:CLib.LogManager.SQLiteSettings
+  href: CLib.LogManager.html#CLib_LogManager_SQLiteSettings
+  name: SQLiteSettings
+  nameWithType: LogManager.SQLiteSettings
+  fullName: CLib.LogManager.SQLiteSettings
+- uid: CLib.SQLiteSettings
+  commentId: T:CLib.SQLiteSettings
+  parent: CLib
+  href: CLib.SQLiteSettings.html
+  name: SQLiteSettings
+  nameWithType: SQLiteSettings
+  fullName: CLib.SQLiteSettings

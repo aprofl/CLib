@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CLib_Examples
+  commentId: N:CLib_Examples
+  id: CLib_Examples
+  children:
+  - CLib_Examples.Main
+  langs:
+  - csharp
+  - vb
+  name: CLib_Examples
+  nameWithType: CLib_Examples
+  fullName: CLib_Examples
+  type: Namespace
+  assemblies:
+  - CLib_Examples
+references:
+- uid: CLib_Examples.Main
+  commentId: T:CLib_Examples.Main
+  href: CLib_Examples.Main.html
+  name: Main
+  nameWithType: Main
+  fullName: CLib_Examples.Main

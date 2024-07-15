@@ -1,0 +1,57 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "**/*.csproj"
+          ],
+          "exclude": [
+            "CLib_Examples/**",
+            "CLib_xUnit/**"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md",
+          "articles/**.md",
+          "toc.yml",
+          "*.md"
+        ],
+        "exclude": [
+          "CLib_Examples/**",
+          "CLib_xUnit/**"
+        ]
+      },
+      {
+        "src": "docs",
+        "files": [
+          "**/*.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "dest": "_site"
+  },
+  "globalMetadata": {
+    "_appTitle": "CLib Documentation",
+    "_disableContribution": true
+  },
+  "template": [
+    "default",
+    "statictoc"
+  ]
+}
