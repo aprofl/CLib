@@ -1,44 +1,26 @@
 ﻿using Serilog.Events;
 
-public class LogItem
-{
-    public DateTime Timestamp { get; set; }
-    public int ErrorCode { get; set; }
-    public string Sender { get; set; }
-    public string Message { get; set; }
-    public LogEventLevel Level { get; set; }
-
-    public LogItem(LogEventLevel level, string sender, int errorCode, string message)
-    {
-        Timestamp = DateTime.Now;
-        Sender = sender;
-        ErrorCode = errorCode;        
-        Message = message;
-        Level = errorCode >= 0 ? level : LogEventLevel.Error;
-    }
-}
-
 public static class Log
 {
     public static void ConfigureLogger() => LogManager.Instance.ConfigureLogger();
 
-    public static void Verbose(string sender, int errorCode, string message)
-        => LogManager.Instance.LogEvent(new LogItem(LogEventLevel.Verbose, sender, errorCode, message));
-    
-    public static void Information(string sender, int errorCode, string message)
-        => LogManager.Instance.LogEvent(new LogItem(LogEventLevel.Information, sender, errorCode, message));
+    public static void Verbose(string sender, int errorCode, string message, Exception? ex = null)
+        => LogManager.Instance.Write(new LogItem(LogEventLevel.Verbose, sender, errorCode, message, ex));
 
-    public static void Warning(string sender, int errorCode, string message)
-        => LogManager.Instance.LogEvent(new LogItem(LogEventLevel.Warning, sender, errorCode, message));
+    public static void Information(string sender, int errorCode, string message, Exception? ex = null)
+        => LogManager.Instance.Write(new LogItem(LogEventLevel.Information, sender, errorCode, message, ex));
 
-    public static void Error(string sender, int errorCode, string message)
-        => LogManager.Instance.LogEvent(new LogItem(LogEventLevel.Error, sender, errorCode, message));
+    public static void Warning(string sender, int errorCode, string message, Exception? ex = null)
+        => LogManager.Instance.Write(new LogItem(LogEventLevel.Warning, sender, errorCode, message, ex));
+
+    public static void Error(string sender, int errorCode, string message, Exception? ex = null)
+        => LogManager.Instance.Write(new LogItem(LogEventLevel.Error, sender, errorCode, message, ex));
 }
 
 public static class LogManagerExtensions
 {
-    public static void LogEvent(this LogManager logManager, LogItem logItem)
+    public static void Write(this LogManager logManager, LogItem logItem)
     {
-        Serilog.Log.Write(logItem.Level, "Timestamp: {Timestamp}, ErrorCode: {ErrorCode}, Sender: {Sender}, Message: {Message}", logItem.Timestamp, logItem.ErrorCode, logItem.Sender, logItem.Message);
+        Serilog.Log.Write(logItem.Level, logItem.Exception, "Time: {Time}, Sender: {Sender}, ErrorCode: {ErrorCode}, Message: {Message}", logItem.Timestamp, logItem.Sender, logItem.ErrorCode, logItem.Message);
     }
 }

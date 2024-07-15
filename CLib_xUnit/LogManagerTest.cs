@@ -5,13 +5,17 @@ using System;
 using System.IO;
 using System.Linq;
 using Xunit;
+using Xunit.Abstractions;
 
-public class LogManagerTests
+public class LogManagerTests : ComplexityTestBase
 {
+    public LogManagerTests(ITestOutputHelper output) : base(output) { }
+    protected override string GetCodeFilePath()
+        => Path.Combine("Log", $"{nameof(LogManager)}.cs");
+    
     [Fact]
     public void Test_FileLogger_CreatesLogFile()
     {
-        // Arrange
         var fileSettings = new FileSettings
         {
             LogFolder = "TestLogs",
@@ -21,55 +25,43 @@ public class LogManagerTests
             Buffered = false,
             FlushToDiskInterval = TimeSpan.FromSeconds(1)
         };
-
         LogManager.Instance.FileSettings = fileSettings;
         LogManager.Instance.LogType = LogType.File;
         Log.ConfigureLogger();
 
-        // Act
         Log.Information("TestSender", 0, "This is a test information log.");
         Log.Error("TestSender", -1, "This is a test error log.");
 
-        // Assert
-        Serilog.Log.CloseAndFlush(); // 로그 파일 닫기 및 플러시
+        Serilog.Log.CloseAndFlush();
         var logFiles = Directory.GetFiles(fileSettings.LogFolder, "test-log-*.txt");
         Assert.NotEmpty(logFiles);
-
-        // Clean up
         RetryDelete(fileSettings.LogFolder);
     }
 
     [Fact]
     public void Test_SQLiteLogger_CreatesDatabase()
     {
-        // Arrange
         var sqliteSettings = new SQLiteSettings
         {
             SqliteDbPath = "TestLogs/test-logs.db",
             TableName = "TestLogs",
             StoreTimestampInUtc = false
         };
-
         LogManager.Instance.SQLiteSettings = sqliteSettings;
         LogManager.Instance.LogType = LogType.SQLite;
         Log.ConfigureLogger();
 
-        // Act
         Log.Information("TestSender", 0, "This is a test information log.");
         Log.Error("TestSender", -1, "This is a test error log.");
 
-        // Assert
-        Serilog.Log.CloseAndFlush(); // 로그 파일 닫기 및 플러시
+        Serilog.Log.CloseAndFlush();
         Assert.True(File.Exists(sqliteSettings.SqliteDbPath));
-
-        // Clean up
         RetryDelete(sqliteSettings.SqliteDbPath);
     }
 
     [Fact]
     public void Test_LogLevels()
     {
-        // Arrange
         using (TestCorrelator.CreateContext())
         {
             var fileSettings = new FileSettings
@@ -81,13 +73,11 @@ public class LogManagerTests
                 Buffered = false,
                 FlushToDiskInterval = TimeSpan.FromSeconds(1)
             };
-
             LogManager.Instance.FileSettings = fileSettings;
             LogManager.Instance.LogType = LogType.File;
 
-            // TestCorrelator를 사용하기 위해 로그 설정에 TestCorrelator sink 추가
             Serilog.Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
+                .MinimumLevel.Verbose()
                 .Enrich.FromLogContext()
                 .WriteTo.TestCorrelator()
                 .WriteTo.File(
@@ -100,38 +90,40 @@ public class LogManagerTests
                     outputTemplate: fileSettings.OutputTemplate)
                 .CreateLogger();
 
-            // Act
             Log.Verbose("TestSender", 0, "This is a verbose log.");
             Log.Information("TestSender", 0, "This is an information log.");
             Log.Warning("TestSender", 0, "This is a warning log.");
             Log.Error("TestSender", -1, "This is an error log.");
-            Log.Warning("TestSender", -2, "This is an error log."); // 추가 테스트 항목
+            Log.Error("TestSender", -2, "This is an error log.");
+            var exception = new InvalidOperationException("Test exception");
+            Log.Error("TestSender", -3, "This is an error log with exception.", exception);
 
-            // Assert
             var logEvents = TestCorrelator.GetLogEventsFromCurrentContext().ToList();
-
             Assert.Contains(logEvents, e => e.Level == LogEventLevel.Verbose
-                                            && e.MessageTemplate.Text == "This is a verbose log."
+                                            && e.MessageTemplate.Text == "Time: {Time}, Sender: {Sender}, ErrorCode: {ErrorCode}, Message: {Message}"
                                             && e.Properties["Sender"].ToString() == "\"TestSender\""
                                             && e.Properties["ErrorCode"].ToString() == "0");
             Assert.Contains(logEvents, e => e.Level == LogEventLevel.Information
-                                            && e.MessageTemplate.Text == "This is an information log."
+                                            && e.MessageTemplate.Text == "Time: {Time}, Sender: {Sender}, ErrorCode: {ErrorCode}, Message: {Message}"
                                             && e.Properties["Sender"].ToString() == "\"TestSender\""
                                             && e.Properties["ErrorCode"].ToString() == "0");
             Assert.Contains(logEvents, e => e.Level == LogEventLevel.Warning
-                                            && e.MessageTemplate.Text == "This is a warning log."
+                                            && e.MessageTemplate.Text == "Time: {Time}, Sender: {Sender}, ErrorCode: {ErrorCode}, Message: {Message}"
                                             && e.Properties["Sender"].ToString() == "\"TestSender\""
                                             && e.Properties["ErrorCode"].ToString() == "0");
             Assert.Contains(logEvents, e => e.Level == LogEventLevel.Error
-                                            && e.MessageTemplate.Text == "This is an error log."
+                                            && e.MessageTemplate.Text == "Time: {Time}, Sender: {Sender}, ErrorCode: {ErrorCode}, Message: {Message}"
                                             && e.Properties["Sender"].ToString() == "\"TestSender\""
                                             && e.Properties["ErrorCode"].ToString() == "-1");
             Assert.Contains(logEvents, e => e.Level == LogEventLevel.Error
-                                            && e.MessageTemplate.Text == "This is an error log."
+                                            && e.MessageTemplate.Text == "Time: {Time}, Sender: {Sender}, ErrorCode: {ErrorCode}, Message: {Message}"
                                             && e.Properties["Sender"].ToString() == "\"TestSender\""
                                             && e.Properties["ErrorCode"].ToString() == "-2");
-
-            // Clean up
+            Assert.Contains(logEvents, e => e.Level == LogEventLevel.Error
+                                            && e.MessageTemplate.Text == "Time: {Time}, Sender: {Sender}, ErrorCode: {ErrorCode}, Message: {Message}"
+                                            && e.Properties["Sender"].ToString() == "\"TestSender\""
+                                            && e.Properties["ErrorCode"].ToString() == "-3"
+                                            && e.Exception == exception);
             Serilog.Log.CloseAndFlush();
             RetryDelete(fileSettings.LogFolder);
         }
@@ -144,18 +136,14 @@ public class LogManagerTests
             try
             {
                 if (Directory.Exists(path))
-                {
                     Directory.Delete(path, true);
-                }
                 else if (File.Exists(path))
-                {
                     File.Delete(path);
-                }
                 return;
             }
             catch (IOException)
             {
-                System.Threading.Thread.Sleep(delayMilliseconds);
+                Thread.Sleep(delayMilliseconds);
             }
         }
     }

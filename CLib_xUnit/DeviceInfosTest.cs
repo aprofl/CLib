@@ -1,11 +1,15 @@
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using System.IO;
 using Xunit;
+using Xunit.Abstractions;
 
-public class DeviceInfosTests
+public class DeviceInfosTests : ComplexityTestBase
 {
     private readonly string _filePath;
+    protected override string GetCodeFilePath()
+        => Path.Combine("ExternalRef", $"{nameof(DeviceInfos)}.cs");
 
-    public DeviceInfosTests()
+    public DeviceInfosTests(ITestOutputHelper output) : base(output)
     {
         _filePath = Singleton<DeviceInfos>.GetPath();
     }
@@ -16,8 +20,7 @@ public class DeviceInfosTests
         var deviceInfos = DeviceInfos.Instance;
 
         if (File.Exists(_filePath))
-            File.Delete(_filePath);
-        
+            File.Delete(_filePath);        
         deviceInfos.Init();
 
         Assert.NotNull(deviceInfos.Devices);
@@ -25,7 +28,6 @@ public class DeviceInfosTests
 
         if (File.Exists(_filePath))
             File.Delete(_filePath);
-
         deviceInfos.Devices.Clear();
     }
 
@@ -38,7 +40,6 @@ public class DeviceInfosTests
         Assert.True(File.Exists(_filePath));
 
         var loadedDeviceInfos = Singleton<DeviceInfos>.Load();
-
         Assert.NotNull(loadedDeviceInfos);
         Assert.NotNull(loadedDeviceInfos.Devices);
         Assert.True(loadedDeviceInfos.Devices.Count > 0);

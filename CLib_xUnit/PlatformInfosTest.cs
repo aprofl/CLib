@@ -2,12 +2,15 @@
 using System.IO;
 using System.Linq;
 using Xunit;
+using Xunit.Abstractions;
 
-public class PlatformInfosTests
+public class PlatformInfosTests : ComplexityTestBase
 {
     private readonly string _filePath;
+    protected override string GetCodeFilePath()
+        => Path.Combine("ExternalRef", $"{nameof(PlatformInfos)}.cs");
 
-    public PlatformInfosTests()
+    public PlatformInfosTests(ITestOutputHelper output) : base(output)
     {
         _filePath = Singleton<PlatformInfos>.GetPath();
     }
@@ -19,7 +22,6 @@ public class PlatformInfosTests
 
         if (File.Exists(_filePath))
             File.Delete(_filePath);
-
         platformInfos.Init();
 
         Assert.NotNull(platformInfos.List);
@@ -28,10 +30,8 @@ public class PlatformInfosTests
         
         foreach (var platform in platformInfos.List)
             Assert.True(platformInfos.dicPlatform.ContainsKey(platform.Type));
-
         if (File.Exists(_filePath))
-            File.Delete(_filePath);
-        
+            File.Delete(_filePath);        
         platformInfos.List.Clear();
     }
 
@@ -40,7 +40,6 @@ public class PlatformInfosTests
     {
         var platformInfos = PlatformInfos.Instance;
         Assert.True(File.Exists(_filePath));
-
         var loadedPlatformInfos = Singleton<PlatformInfos>.Load();
         loadedPlatformInfos?.Init();
 

@@ -15,31 +15,41 @@ public class Singleton<T> where T : class, new()
     public static T Instance => instance.Value;
 
     protected Singleton() { }
-
+       
     internal static T? Load()
     {
         var path = GetPath();
+        if (!File.Exists(path))
+            return null;
+
         try
         {
-            if (!File.Exists(path))
-                return null;
-
-            using (var sr = new StreamReader(path))
-            {
-                var xs = new XmlSerializer(typeof(T));
-                return (T?)xs.Deserialize(sr);
-            }
+            return DeserializeFromFile(path);
         }
         catch (Exception ex)
         {
-            //Log.app.Error($"File Load Failed : {path}\r\n\t{ex}");
+            Serilog.Log.Error(ex, $"{typeof(T).Name}: Load Failed : {path}");
             return null;
         }
     }
 
+    private static T? DeserializeFromFile(string path)
+    {
+        using (var sr = new StreamReader(path))
+        {
+            var xs = new XmlSerializer(typeof(T));
+            return (T?)xs.Deserialize(sr);
+        }
+    }
+    
     internal virtual void Save()
     {
         var path = GetPath();
+        SaveToFile(path);
+    }
+
+    private void SaveToFile(string path)
+    {
         try
         {
             using (StreamWriter wr = new StreamWriter(path))
@@ -50,14 +60,13 @@ public class Singleton<T> where T : class, new()
         }
         catch (Exception ex)
         {
-            //Log.app.Error($"File Save Failed : {path}\r\n\t{ex}");
+            Serilog.Log.Error(ex, $"{typeof(T).Name}: Save Failed : {path}");
         }
     }
 
     internal static string GetPath()
     {
         var name = typeof(T).Name;
-        var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "COMIZOA", "Clib", $"{name}.xml");
-        return path;        
+        return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "COMIZOA", "Clib", $"{name}.xml");
     }
 }
