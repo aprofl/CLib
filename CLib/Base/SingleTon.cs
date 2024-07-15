@@ -1,6 +1,12 @@
 ﻿using System.Reflection;
 using System.Xml.Serialization;
 
+/// <summary>
+/// Singleton Base Class
+/// </summary>
+/// <remarks>
+/// <para>%AppData%\COMIZOA\CLib\l 파일의 정보 참조</para>
+/// </remarks>
 [Serializable]
 public class Singleton<T> where T : class, new()
 {

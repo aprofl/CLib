@@ -1,0 +1,167 @@
+{
+  "source_base_path": "D:/10_Project/CLib",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.Cosys.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.Cosys.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.DeviceChecker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.DeviceChecker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.DeviceFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.DeviceFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.DeviceManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.DeviceManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.EtherCATDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.EtherCATDevice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.IDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.IDevice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.PciDeviceScanner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.PciDeviceScanner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib_Examples.Main.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib_Examples.Main.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CLib_Examples.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CLib_Examples.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
