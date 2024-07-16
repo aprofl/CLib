@@ -20,8 +20,12 @@ items:
   fullName: CLib.Platform
   type: Class
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Platform
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 47
   assemblies:
   - CLib
@@ -51,8 +55,12 @@ items:
   fullName: CLib.Platform.Name
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Name
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 52
   assemblies:
   - CLib
@@ -76,8 +84,12 @@ items:
   fullName: CLib.Platform.Type
   type: Field
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Type
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 64
   assemblies:
   - CLib
@@ -99,8 +111,12 @@ items:
   fullName: CLib.Platform.DLL
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: DLL
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 66
   assemblies:
   - CLib
@@ -124,8 +140,12 @@ items:
   fullName: CLib.Platform.Drivers
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Drivers
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 69
   assemblies:
   - CLib
@@ -149,8 +169,12 @@ items:
   fullName: CLib.Platform.Driver
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Driver
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 72
   assemblies:
   - CLib
@@ -174,8 +198,12 @@ items:
   fullName: CLib.Platform.IsInstalled
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: IsInstalled
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 79
   assemblies:
   - CLib
@@ -199,8 +227,12 @@ items:
   fullName: CLib.Platform.IsDriverInstalled
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: IsDriverInstalled
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 82
   assemblies:
   - CLib

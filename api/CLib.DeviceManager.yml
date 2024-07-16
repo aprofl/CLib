@@ -15,8 +15,12 @@ items:
   fullName: CLib.DeviceManager
   type: Class
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: DeviceManager
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 36
   assemblies:
   - CLib
@@ -48,8 +52,12 @@ items:
   fullName: CLib.DeviceManager.DeviceManager()
   type: Constructor
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: .ctor
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 40
   assemblies:
   - CLib
@@ -73,8 +81,12 @@ items:
   fullName: CLib.DeviceManager.ScanForDevices()
   type: Method
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ScanForDevices
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 45
   assemblies:
   - CLib

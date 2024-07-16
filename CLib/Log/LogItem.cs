@@ -1,4 +1,5 @@
-﻿using Serilog.Events;
+﻿using CLib;
+using Serilog.Events;
 
 public class LogItem
 {
@@ -19,4 +20,8 @@ public class LogItem
         Level = errorCode >= 0 ? level : LogEventLevel.Error;
         Exception = exception;
     }
+
+    public void Compt() => Log.Debug(Sender, 0, $"{Message} compt");
+    public void Compt(int errorCode) => Log.Debug(Sender, errorCode, $"{Message} end");
+    public void Compt(Exception ex) => Log.Debug(Sender, 0, $"{Message} end", ex);
 }

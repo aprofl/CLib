@@ -15,8 +15,12 @@ items:
   fullName: CLib.Singleton<T>
   type: Class
   source:
+    remote:
+      path: CLib/Base/SingleTon.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Singleton
-    path: D:\10_Project\CLib\CLib\Base\SingleTon.cs
+    path: CLib/Base/SingleTon.cs
     startLine: 11
   assemblies:
   - CLib
@@ -69,8 +73,12 @@ items:
   fullName: CLib.Singleton<T>.Instance
   type: Property
   source:
+    remote:
+      path: CLib/Base/SingleTon.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Instance
-    path: D:\10_Project\CLib\CLib\Base\SingleTon.cs
+    path: CLib/Base/SingleTon.cs
     startLine: 22
   assemblies:
   - CLib
@@ -96,8 +104,12 @@ items:
   fullName: CLib.Singleton<T>.Singleton()
   type: Constructor
   source:
+    remote:
+      path: CLib/Base/SingleTon.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: .ctor
-    path: D:\10_Project\CLib\CLib\Base\SingleTon.cs
+    path: CLib/Base/SingleTon.cs
     startLine: 24
   assemblies:
   - CLib

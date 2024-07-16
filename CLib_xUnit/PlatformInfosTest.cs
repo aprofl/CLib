@@ -1,22 +1,21 @@
 ﻿using Xunit.Abstractions;
-using CLib;
-
+using CLib.Infos;
 
 public class PlatformInfosTests : ComplexityTestBase
 {
     private readonly string _filePath;
     protected override string GetCodeFilePath()
-        => Path.Combine("ExternalRef", $"{nameof(PlatformInfos)}.cs");
+        => Path.Combine("ExternalRef", $"{nameof(Platforms)}.cs");
 
     public PlatformInfosTests(ITestOutputHelper output) : base(output)
     {
-        _filePath = CLib.Singleton<PlatformInfos>.GetPath();
+        _filePath = Singleton<Platforms>.GetPath();
     }
 
     [Fact]
     public void TestInitAndSave()
     {
-        var platformInfos = PlatformInfos.Instance;
+        var platformInfos = Platforms.Instance;
 
         if (File.Exists(_filePath))
             File.Delete(_filePath);
@@ -36,9 +35,9 @@ public class PlatformInfosTests : ComplexityTestBase
     [Fact]
     public void TestLoadReturnsInstanceWithPlatformInfo()
     {
-        var platformInfos = PlatformInfos.Instance;
+        var platformInfos = Platforms.Instance;
         Assert.True(File.Exists(_filePath));
-        var loadedPlatformInfos = Singleton<PlatformInfos>.Load();
+        var loadedPlatformInfos = Singleton<Platforms>.Load();
         loadedPlatformInfos?.Init();
 
         Assert.NotNull(loadedPlatformInfos);

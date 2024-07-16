@@ -11,7 +11,8 @@ namespace CLib_Examples
 
         public void Main_Load(object sender, EventArgs e)
         {
-            CLib.Cosys.Init();
+            var sys = new CLib.Cosys();
+            sys.Init();
         }
     }
 }

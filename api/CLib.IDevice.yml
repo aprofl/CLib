@@ -14,8 +14,12 @@ items:
   fullName: CLib.IDevice
   type: Interface
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: IDevice
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 71
   assemblies:
   - CLib
@@ -35,8 +39,12 @@ items:
   fullName: CLib.IDevice.LoadDevice()
   type: Method
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: LoadDevice
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 73
   assemblies:
   - CLib

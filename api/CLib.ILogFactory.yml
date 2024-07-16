@@ -14,8 +14,12 @@ items:
   fullName: CLib.ILogFactory
   type: Interface
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ILogFactory
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 49
   assemblies:
   - CLib
@@ -35,8 +39,12 @@ items:
   fullName: CLib.ILogFactory.CreateLoggerConfiguration()
   type: Method
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: CreateLoggerConfiguration
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 51
   assemblies:
   - CLib

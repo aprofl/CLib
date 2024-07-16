@@ -14,8 +14,12 @@ items:
   fullName: CLib.DeviceFactory
   type: Class
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: DeviceFactory
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 84
   assemblies:
   - CLib
@@ -45,8 +49,12 @@ items:
   fullName: CLib.DeviceFactory.CreateDevice(string)
   type: Method
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: CreateDevice
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 86
   assemblies:
   - CLib

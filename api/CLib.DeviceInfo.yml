@@ -32,8 +32,12 @@ items:
   fullName: CLib.DeviceInfo
   type: Class
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: DeviceInfo
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 101
   assemblies:
   - CLib
@@ -73,8 +77,12 @@ items:
   fullName: CLib.DeviceInfo.DeviceInfo()
   type: Constructor
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: .ctor
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 104
   assemblies:
   - CLib
@@ -98,8 +106,12 @@ items:
   fullName: CLib.DeviceInfo.DeviceInfo(string, string, string)
   type: Constructor
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: .ctor
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 105
   assemblies:
   - CLib
@@ -130,8 +142,12 @@ items:
   fullName: CLib.DeviceInfo.Code
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Code
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 112
   assemblies:
   - CLib
@@ -155,8 +171,12 @@ items:
   fullName: CLib.DeviceInfo.Name
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Name
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 115
   assemblies:
   - CLib
@@ -180,8 +200,12 @@ items:
   fullName: CLib.DeviceInfo.Platform
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Platform
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 118
   assemblies:
   - CLib
@@ -205,8 +229,12 @@ items:
   fullName: CLib.DeviceInfo.DI
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: DI
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 122
   assemblies:
   - CLib
@@ -230,8 +258,12 @@ items:
   fullName: CLib.DeviceInfo.ShouldSerializeDI()
   type: Method
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ShouldSerializeDI
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 129
   assemblies:
   - CLib
@@ -254,8 +286,12 @@ items:
   fullName: CLib.DeviceInfo.DO
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: DO
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 132
   assemblies:
   - CLib
@@ -279,8 +315,12 @@ items:
   fullName: CLib.DeviceInfo.ShouldSerializeDO()
   type: Method
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ShouldSerializeDO
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 139
   assemblies:
   - CLib
@@ -303,8 +343,12 @@ items:
   fullName: CLib.DeviceInfo.AI
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: AI
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 142
   assemblies:
   - CLib
@@ -328,8 +372,12 @@ items:
   fullName: CLib.DeviceInfo.ShouldSerializeAI()
   type: Method
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ShouldSerializeAI
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 149
   assemblies:
   - CLib
@@ -352,8 +400,12 @@ items:
   fullName: CLib.DeviceInfo.AO
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: AO
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 152
   assemblies:
   - CLib
@@ -377,8 +429,12 @@ items:
   fullName: CLib.DeviceInfo.ShouldSerializeAO()
   type: Method
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ShouldSerializeAO
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 159
   assemblies:
   - CLib
@@ -401,8 +457,12 @@ items:
   fullName: CLib.DeviceInfo.Counter
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Counter
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 162
   assemblies:
   - CLib
@@ -426,8 +486,12 @@ items:
   fullName: CLib.DeviceInfo.ShouldSerializeCounter()
   type: Method
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ShouldSerializeCounter
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 169
   assemblies:
   - CLib
@@ -450,8 +514,12 @@ items:
   fullName: CLib.DeviceInfo.Serial
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Serial
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 172
   assemblies:
   - CLib
@@ -475,8 +543,12 @@ items:
   fullName: CLib.DeviceInfo.ShouldSerializeSerial()
   type: Method
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ShouldSerializeSerial
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 179
   assemblies:
   - CLib
@@ -499,8 +571,12 @@ items:
   fullName: CLib.DeviceInfo.Axis
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Axis
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 182
   assemblies:
   - CLib
@@ -524,8 +600,12 @@ items:
   fullName: CLib.DeviceInfo.ShouldSerializeAxis()
   type: Method
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ShouldSerializeAxis
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 189
   assemblies:
   - CLib

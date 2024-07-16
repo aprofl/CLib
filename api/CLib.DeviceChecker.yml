@@ -14,8 +14,12 @@ items:
   fullName: CLib.DeviceChecker
   type: Class
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: DeviceChecker
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 23
   assemblies:
   - CLib
@@ -45,8 +49,12 @@ items:
   fullName: CLib.DeviceChecker.GetInstalledDevices(System.Collections.Generic.List<string>, System.Collections.Generic.List<CLib.DeviceInfo>)
   type: Method
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: GetInstalledDevices
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 25
   assemblies:
   - CLib

@@ -18,8 +18,12 @@ items:
   fullName: CLib.Log
   type: Class
   source:
+    remote:
+      path: CLib/Log/Log.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Log
-    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    path: CLib/Log/Log.cs
     startLine: 4
   assemblies:
   - CLib
@@ -49,8 +53,12 @@ items:
   fullName: CLib.Log.ConfigureLogger()
   type: Method
   source:
+    remote:
+      path: CLib/Log/Log.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ConfigureLogger
-    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    path: CLib/Log/Log.cs
     startLine: 6
   assemblies:
   - CLib
@@ -71,8 +79,12 @@ items:
   fullName: CLib.Log.Verbose(string, int, string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: CLib/Log/Log.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Verbose
-    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    path: CLib/Log/Log.cs
     startLine: 8
   assemblies:
   - CLib
@@ -105,8 +117,12 @@ items:
   fullName: CLib.Log.Information(string, int, string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: CLib/Log/Log.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Information
-    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    path: CLib/Log/Log.cs
     startLine: 11
   assemblies:
   - CLib
@@ -139,8 +155,12 @@ items:
   fullName: CLib.Log.Warning(string, int, string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: CLib/Log/Log.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Warning
-    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    path: CLib/Log/Log.cs
     startLine: 14
   assemblies:
   - CLib
@@ -173,8 +193,12 @@ items:
   fullName: CLib.Log.Error(string, int, string, System.Exception?)
   type: Method
   source:
+    remote:
+      path: CLib/Log/Log.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Error
-    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    path: CLib/Log/Log.cs
     startLine: 17
   assemblies:
   - CLib

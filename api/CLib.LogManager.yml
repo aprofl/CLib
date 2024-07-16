@@ -17,8 +17,12 @@ items:
   fullName: CLib.LogManager
   type: Class
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: LogManager
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 9
   assemblies:
   - CLib
@@ -52,8 +56,12 @@ items:
   fullName: CLib.LogManager.ConfigureLogger()
   type: Method
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: ConfigureLogger
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 16
   assemblies:
   - CLib
@@ -74,8 +82,12 @@ items:
   fullName: CLib.LogManager.LogType
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: LogType
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 30
   assemblies:
   - CLib
@@ -99,8 +111,12 @@ items:
   fullName: CLib.LogManager.FileSettings
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: FileSettings
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 42
   assemblies:
   - CLib
@@ -124,8 +140,12 @@ items:
   fullName: CLib.LogManager.SQLiteSettings
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: SQLiteSettings
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 45
   assemblies:
   - CLib

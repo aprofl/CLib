@@ -17,8 +17,12 @@ items:
   fullName: CLib.PlatformInfos
   type: Class
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: PlatformInfos
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 5
   assemblies:
   - CLib
@@ -50,8 +54,12 @@ items:
   fullName: CLib.PlatformInfos.PlatformInfos()
   type: Constructor
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: .ctor
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 8
   assemblies:
   - CLib
@@ -75,8 +83,12 @@ items:
   fullName: CLib.PlatformInfos.Info
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Info
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 38
   assemblies:
   - CLib
@@ -100,8 +112,12 @@ items:
   fullName: CLib.PlatformInfos.List
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: List
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 41
   assemblies:
   - CLib
@@ -125,8 +141,12 @@ items:
   fullName: CLib.PlatformInfos.dicPlatform
   type: Field
   source:
+    remote:
+      path: CLib/ExternalRef/PlatformInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: dicPlatform
-    path: D:\10_Project\CLib\CLib\ExternalRef\PlatformInfos.cs
+    path: CLib/ExternalRef/PlatformInfos.cs
     startLine: 44
   assemblies:
   - CLib

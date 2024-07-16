@@ -15,8 +15,12 @@ items:
   fullName: CLib.FileLogFactory
   type: Class
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: FileLogFactory
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 54
   assemblies:
   - CLib
@@ -48,8 +52,12 @@ items:
   fullName: CLib.FileLogFactory.FileLogFactory(CLib.FileSettings)
   type: Constructor
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: .ctor
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 58
   assemblies:
   - CLib
@@ -76,8 +84,12 @@ items:
   fullName: CLib.FileLogFactory.CreateLoggerConfiguration()
   type: Method
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: CreateLoggerConfiguration
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 63
   assemblies:
   - CLib

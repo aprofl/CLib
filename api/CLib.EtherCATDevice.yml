@@ -14,8 +14,12 @@ items:
   fullName: CLib.EtherCATDevice
   type: Class
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: EtherCATDevice
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 76
   assemblies:
   - CLib
@@ -47,8 +51,12 @@ items:
   fullName: CLib.EtherCATDevice.LoadDevice()
   type: Method
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: LoadDevice
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 78
   assemblies:
   - CLib

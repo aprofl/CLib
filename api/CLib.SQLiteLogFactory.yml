@@ -15,8 +15,12 @@ items:
   fullName: CLib.SQLiteLogFactory
   type: Class
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: SQLiteLogFactory
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 83
   assemblies:
   - CLib
@@ -48,8 +52,12 @@ items:
   fullName: CLib.SQLiteLogFactory.SQLiteLogFactory(CLib.SQLiteSettings)
   type: Constructor
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: .ctor
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 87
   assemblies:
   - CLib
@@ -76,8 +84,12 @@ items:
   fullName: CLib.SQLiteLogFactory.CreateLoggerConfiguration()
   type: Method
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: CreateLoggerConfiguration
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 92
   assemblies:
   - CLib

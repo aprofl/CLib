@@ -15,8 +15,12 @@ items:
   fullName: CLib.DeviceInfos
   type: Class
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: DeviceInfos
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 12
   assemblies:
   - CLib
@@ -64,8 +68,12 @@ items:
   fullName: CLib.DeviceInfos.Info
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Info
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 25
   assemblies:
   - CLib
@@ -89,8 +97,12 @@ items:
   fullName: CLib.DeviceInfos.Devices
   type: Property
   source:
+    remote:
+      path: CLib/ExternalRef/DeviceInfos.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Devices
-    path: D:\10_Project\CLib\CLib\ExternalRef\DeviceInfos.cs
+    path: CLib/ExternalRef/DeviceInfos.cs
     startLine: 28
   assemblies:
   - CLib

@@ -16,8 +16,12 @@ items:
   fullName: CLib.SQLiteSettings
   type: Class
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: SQLiteSettings
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 137
   assemblies:
   - CLib
@@ -47,8 +51,12 @@ items:
   fullName: CLib.SQLiteSettings.SqliteDbPath
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: SqliteDbPath
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 139
   assemblies:
   - CLib
@@ -72,8 +80,12 @@ items:
   fullName: CLib.SQLiteSettings.TableName
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: TableName
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 142
   assemblies:
   - CLib
@@ -97,8 +109,12 @@ items:
   fullName: CLib.SQLiteSettings.StoreTimestampInUtc
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: StoreTimestampInUtc
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 145
   assemblies:
   - CLib

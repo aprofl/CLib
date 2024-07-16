@@ -1,98 +1,148 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Xml.Serialization;
-using System.Management;
+﻿using CLib.Infos;
+using System.Collections.ObjectModel;
 
 namespace CLib
 {
-    public static class Cosys
+    public class SystemInfo
     {
-        private static List<IDevice> devices = new List<IDevice>();
-        public static void Init()
-        {
-            //LogManager.Instance.ConfigureLogger();
+        /// <inheritdoc cref="Infos.Platforms"/>
+        public Platforms Platforms => Platforms.Instance;
 
-            var list = DeviceManager.Instance.ScanForDevices();
-            var devInfos = DeviceInfos.Instance.Devices;
-            var pInfos = PlatformInfos.Instance.List;
-        }
-    }
-           
-
-    public static class DeviceChecker
-    {
-        public static List<DeviceInfo> GetInstalledDevices(List<string> detectedDeviceIds, List<DeviceInfo> devices)
-        {
-            return devices.Where(device => detectedDeviceIds.Contains(device.Code)).ToList();
-        }
+        /// <inheritdoc cref="Infos.Devices"/>
+        public Devices Devices => Devices.Instance;
     }
 
-    public static class PciDeviceScanner
+    /// <summary>
+    /// Comizoa System class
+    /// </summary>
+    public class Cosys
     {
+        Device.Manager DeviceManager { get; set; } = new Device.Manager();
+
         
-    }
+        /// <summary>
+        /// System에 로드된 제품 목록
+        /// </summary>
+        public ReadOnlyCollection<Device.Info> Devices => DeviceManager.List;
 
-    public class DeviceManager : Singleton<DeviceManager>
-    {        
-        private List<IDevice> devices;
+        /// <inheritdoc cref="SystemInfo"/>
+        internal SystemInfo Info = new SystemInfo();
 
-        public DeviceManager()
+        /// <summary>
+        /// Property를 통해 입력되는 값이 즉시 적용 되도록 설정
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// picker.Config.Unit.Value = 100;
+        /// picker.Config.Unit.Set(); // 생략 가능
+        /// </code></example>
+        public bool IsPropertySetEnable { get; set; }
+
+        /// <summary>
+        /// 시스템을 초기화합니다.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item>COMIZOA 제품을 검색하여 Device Class를 생성합니다.</item>
+        /// </list>
+        /// </remarks>
+        /// <returns>초기화 성공 여부</returns>
+        /// <example>
+        /// <code>
+        /// ComiSys.Init();
+        /// ComiSys.Start();
+        /// </code></example>
+        public async Task<bool> Init()
+            => await Task.Run(() =>
+            {                
+                DeviceManager.Init();
+                //return devices.All(x=>x.state)
+                return true;
+            });
+
+
+        /// <summary>
+        /// System을 시작합니다.
+        /// </summary>
+        /// <remarks>
+        /// <para><strong>EtherCAT</strong></para>
+        /// <list type="bullet">
+        /// <item>SW 버전이 호환 가능 상태인지 확인합니다.</item>
+        /// <item>역삽입된 모듈이 있는지 확인합니다.</item>
+        /// <item>드라이버가 Alarm 상태인 경우, 클리어합니다.</item>
+        /// <item>Al-Status를 OP로 전환합니다.</item>
+        /// </list>
+        /// </remarks>
+        /// <seealso cref="Init()"/>
+        public void Start()
         {
-            devices = new List<IDevice>();
+            foreach (var dev in Devices)
+                dev.Init();
         }
 
-        public List<string> ScanForDevices()
+        /// <summary>
+        /// System을 종료합니다.
+        /// </summary>
+        public bool End()
         {
-            List<string> deviceIds = new List<string>();
-
-            try
+            foreach (var d in Devices)
             {
-                string query = "SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE 'PCI%'";
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
-                ManagementObjectCollection devices = searcher.Get();
-
-                foreach (ManagementObject device in devices)
+                //var log = Log.Add(nameof(End)).S(d);
+                try
                 {
-                    // 여기서 DeviceID를 가져오는데, 필요에 따라 필터링하거나 가공할 수 있음
-                    string deviceId = device["DeviceID"].ToString();
-                    deviceIds.Add(deviceId);
+                    //d.Motion?.axisList.ForEach(x => x.Motion.Stop());
+                    //d.UnloadDevice(log);
+                }
+                catch (Exception ex)
+                {
+                    //log.Compt(ex);
+                    return false;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error scanning PCI devices: " + ex.Message);
-            }
 
-            return deviceIds;
+            //devices.Clear();
+            return true;
         }
     }
-
-    public interface IDevice
-    {
-        void LoadDevice();
-    }
-
-    public class EtherCATDevice : IDevice
-    {
-        public void LoadDevice()
+        /// <summary>
+        /// <para>System Initialize 상세 옵션입니다.</para>
+        /// <para>일반적으로 사용하지 않습니다.</para>
+        /// </summary>
+        public class InitOption
         {
-            // EtherCAT 장치 초기화 및 정보 로드
+            /// <summary>
+            /// cEIP 시스템 로드 시 마스터의 수
+            /// </summary>
+            /// <remarks>Scan TimeOut 시간을 결정합니다.</remarks>
+            public static int ScanNodeCount = 2;
+            //public static uint nodeScanTimeOut = 80;
+
+            /// <summary>
+            /// cEIP 시스템 초기화 시 cEIP / AllNet 구분
+            /// </summary>
+            /// <remarks>Slave의 이름을 결정합니다.</remarks>
+            public static bool IsAllNet = false;
+
+            /// <summary>
+            /// DAQ(CP, SD) System 초기화 시 사용할 DLL을 결정합니다.
+            /// </summary>
+            /// <remarks>
+            /// <list>
+            /// <item>true : Cmmsdk.dll</item>
+            /// <item>false : ComiDll.dll</item>
+            /// </list>
+            /// </remarks>
+            public static bool IsDioDevLoadOnPulse = true;
+
+            /// <summary>
+            /// EtherCAT System 초기화 시 Driver의 IO Class를 생성할지 결정합니다.
+            /// </summary>
+            /// <remarks></remarks>
+            public static bool MotionIoVisible = false;
+
+            internal static bool isDioLoaded = false;
+
+            //public static bool driverCheck = true;
         }
     }
 
-    public static class DeviceFactory
-    {
-        public static IDevice CreateDevice(string deviceId)
-        {
-            switch (deviceId)
-            {
-                case "A5025032":
-                    return new EtherCATDevice();
-                default:
-                    return null;
-            }
-        }
-    }
-}

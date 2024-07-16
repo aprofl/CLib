@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
-namespace CLib
+namespace CLib.Infos
 {
+    /// <summary>
+    /// 디바이스의 종류
+    /// </summary>
     [XmlRoot("PlatformInfos")]
-    public class PlatformInfos : Singleton<PlatformInfos>
+    public class Platforms : Singleton<Platforms>
     {
-        public PlatformInfos()
+        public Platforms()
         {
         }
 
@@ -82,5 +84,8 @@ namespace CLib
 
         [XmlIgnore]
         public bool IsDriverInstalled { get; set; }
+
+        [XmlIgnore]
+        internal Version DriverVersion { get; set; }
     }
 }

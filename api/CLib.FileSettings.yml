@@ -20,8 +20,12 @@ items:
   fullName: CLib.FileSettings
   type: Class
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: FileSettings
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 113
   assemblies:
   - CLib
@@ -51,8 +55,12 @@ items:
   fullName: CLib.FileSettings.LogFolder
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: LogFolder
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 115
   assemblies:
   - CLib
@@ -76,8 +84,12 @@ items:
   fullName: CLib.FileSettings.LogFileName
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: LogFileName
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 118
   assemblies:
   - CLib
@@ -101,8 +113,12 @@ items:
   fullName: CLib.FileSettings.RetentionDays
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: RetentionDays
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 121
   assemblies:
   - CLib
@@ -126,8 +142,12 @@ items:
   fullName: CLib.FileSettings.FileSizeLimitBytes
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: FileSizeLimitBytes
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 124
   assemblies:
   - CLib
@@ -151,8 +171,12 @@ items:
   fullName: CLib.FileSettings.Buffered
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Buffered
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 127
   assemblies:
   - CLib
@@ -176,8 +200,12 @@ items:
   fullName: CLib.FileSettings.FlushToDiskInterval
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: FlushToDiskInterval
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 130
   assemblies:
   - CLib
@@ -201,8 +229,12 @@ items:
   fullName: CLib.FileSettings.OutputTemplate
   type: Property
   source:
+    remote:
+      path: CLib/Log/LogManager.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: OutputTemplate
-    path: D:\10_Project\CLib\CLib\Log\LogManager.cs
+    path: CLib/Log/LogManager.cs
     startLine: 133
   assemblies:
   - CLib

@@ -14,8 +14,12 @@ items:
   fullName: CLib.Cosys
   type: Class
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Cosys
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 9
   assemblies:
   - CLib
@@ -45,8 +49,12 @@ items:
   fullName: CLib.Cosys.Init()
   type: Method
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Init
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 12
   assemblies:
   - CLib

@@ -13,8 +13,12 @@ items:
   fullName: CLib.PciDeviceScanner
   type: Class
   source:
+    remote:
+      path: CLib/Cosys.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: PciDeviceScanner
-    path: D:\10_Project\CLib\CLib\Cosys.cs
+    path: CLib/Cosys.cs
     startLine: 31
   assemblies:
   - CLib

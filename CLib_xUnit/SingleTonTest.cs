@@ -1,5 +1,6 @@
 using Xunit.Abstractions;
-using CLib;
+using CLib.Infos;
+
 public class SingleTonTest : ComplexityTestBase
 {
     public SingleTonTest(ITestOutputHelper output) : base(output) { }

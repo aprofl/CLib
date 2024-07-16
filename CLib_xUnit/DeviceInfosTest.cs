@@ -1,45 +1,45 @@
-using CLib;
+using CLib.Infos;
 using Xunit.Abstractions;
 
 public class DeviceInfosTests : ComplexityTestBase
 {
     private readonly string _filePath;
     protected override string GetCodeFilePath()
-        => Path.Combine("ExternalRef", $"{nameof(DeviceInfos)}.cs");
+        => Path.Combine("ExternalRef", $"{nameof(Devices)}.cs");
 
     public DeviceInfosTests(ITestOutputHelper output) : base(output)
     {
-        _filePath = Singleton<DeviceInfos>.GetPath();
+        _filePath = Singleton<Devices>.GetPath();
     }
 
     [Fact]
     public void TestInitAndSave()
     {
-        var deviceInfos = DeviceInfos.Instance;
+        var deviceInfos = Devices.Instance;
 
         if (File.Exists(_filePath))
             File.Delete(_filePath);        
         deviceInfos.Init();
 
-        Assert.NotNull(deviceInfos.Devices);
-        Assert.True(deviceInfos.Devices.Count > 0);
+        Assert.NotNull(deviceInfos.List);
+        Assert.True(deviceInfos.List.Count > 0);
 
         if (File.Exists(_filePath))
             File.Delete(_filePath);
-        deviceInfos.Devices.Clear();
+        deviceInfos.List.Clear();
     }
 
     [Fact]
     public void TestLoadReturnsInstanceWithDeviceInfo()
     {
-        var deviceInfos = DeviceInfos.Instance;
+        var deviceInfos = Devices.Instance;
         deviceInfos.Init();
 
         Assert.True(File.Exists(_filePath));
 
-        var loadedDeviceInfos = Singleton<DeviceInfos>.Load();
+        var loadedDeviceInfos = Singleton<Devices>.Load();
         Assert.NotNull(loadedDeviceInfos);
-        Assert.NotNull(loadedDeviceInfos.Devices);
-        Assert.True(loadedDeviceInfos.Devices.Count > 0);
+        Assert.NotNull(loadedDeviceInfos.List);
+        Assert.True(loadedDeviceInfos.List.Count > 0);
     }
 }

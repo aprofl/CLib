@@ -1,7 +1,7 @@
 ﻿using System.Xml;
 using System.Xml.Serialization;
 
-namespace CLib
+namespace CLib.Infos
 {
     /// <summary>
     /// Device의 기본 정보 제공
@@ -12,22 +12,27 @@ namespace CLib
     /// </remarks>
     [Serializable]
     [XmlRoot("DeviceList")]
-    public class DeviceInfos : Singleton<DeviceInfos>
+    public class Devices : Singleton<Devices>
     {
         internal void Init()
         {
-            if (Devices != null && Devices.Count > 0)
+            if (List != null && List.Count > 0)
                 return;
 
-            Devices = GetDefaultDeviceInfos();
+            List = GetDefaultDeviceInfos();
             Save();
         }
 
         [XmlElement]
         public Info Info { get; set; } = new Info();
 
+        /// <summary>       
+            /// 제품 정보가 담긴 List
+        /// </summary>
         [XmlElement("DeviceInfo")]
-        public List<DeviceInfo>? Devices { get; set; }
+        public List<DeviceInfo>? List { get; set; }
+
+        public List<DeviceInfo>? ScannedDevices { get; set; }
 
         private List<DeviceInfo> GetDefaultDeviceInfos()
         {
@@ -98,7 +103,9 @@ namespace CLib
         }
     }
 
-
+    /// <summary>
+    /// 제품 정보
+    /// </summary>
     [Serializable]
     public class DeviceInfo
     {
@@ -110,6 +117,9 @@ namespace CLib
             Platform = platform;
         }
 
+        /// <summary>
+        /// 제품 구분 코드
+        /// </summary>
         [XmlAttribute]
         public string Code { get; set; } = string.Empty;
 
@@ -118,6 +128,9 @@ namespace CLib
 
         [XmlAttribute]
         public string Platform { get; set; } = string.Empty;
+
+        [XmlIgnore]
+        internal DevType DevType => Platform.ToEnum<DevType>();
 
         private int di;
         [XmlAttribute("DI")]

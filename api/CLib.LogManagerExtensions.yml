@@ -14,8 +14,12 @@ items:
   fullName: CLib.LogManagerExtensions
   type: Class
   source:
+    remote:
+      path: CLib/Log/Log.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: LogManagerExtensions
-    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    path: CLib/Log/Log.cs
     startLine: 21
   assemblies:
   - CLib
@@ -46,8 +50,12 @@ items:
   fullName: CLib.LogManagerExtensions.Write(CLib.LogManager, LogItem)
   type: Method
   source:
+    remote:
+      path: CLib/Log/Log.cs
+      branch: master
+      repo: https://github.com/aprofl/CLib.git
     id: Write
-    path: D:\10_Project\CLib\CLib\Log\Log.cs
+    path: CLib/Log/Log.cs
     startLine: 23
   assemblies:
   - CLib

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Xml.Serialization;
 
-namespace CLib
+namespace CLib.Infos
 {
     /// <summary>
     /// Singleton Base Class
